@@ -5,3 +5,5 @@ mono/
 *.mono
 *.import
 *.tmp
+.DS_Store
+.godot/
