@@ -1,36 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://disdxgb5oshaw"]
-
-[ext_resource type="Script" path="res://main_menu.gd" id="1_4blo0"]
-[ext_resource type="Texture2D" uid="uid://cxqp2atsfondq" path="res://made-a-main-menu-background-v0-tocu0xmhmeca1.webp" id="1_gks11"]
-[ext_resource type="Texture2D" uid="uid://de86niiokfbbs" path="res://ChatGPT Image Apr 4, 2025, 03_25_07 PM.png" id="2_811na"]
-[ext_resource type="Texture2D" uid="uid://dvpvfriowhh3x" path="res://ChatGPT Image Apr 4, 2025, 03_32_05 PM.png" id="2_ldc6l"]
-[ext_resource type="Texture2D" uid="uid://b80wjaie2cp1g" path="res://ChatGPT Image Apr 4, 2025, 03_34_01 PM.png" id="3_dgd0q"]
+[gd_scene load_steps=7 format=3 uid="uid://dmlsmeiq8b60w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s88w6"]
-texture = ExtResource("1_gks11")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4pd3k"]
-texture = ExtResource("2_ldc6l")
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_beuc4"]
-texture = ExtResource("2_ldc6l")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dbpro"]
-texture = ExtResource("2_ldc6l")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6x4w"]
-texture = ExtResource("3_dgd0q")
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sdvc4"]
-texture = ExtResource("3_dgd0q")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -39,7 +27,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4blo0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -91,7 +78,6 @@ offset_left = 4.0
 offset_top = -6.0
 offset_right = 554.0
 offset_bottom = 291.0
-texture = ExtResource("2_811na")
 expand_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
