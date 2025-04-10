@@ -68,12 +68,7 @@ The experience emphasizes:
 
 ## Project Structure
 
-/Player - Player character and abilities
-/Bosses - Boss logic, animations, and arenas
-/World - Overworld map, entrances, props, and arena scenes
-/UI - Menus and HUD elements
-/Scripts - Global managers and utilities
-/Assets - Raw tilesets, sprites, and unused resources
+/Player - Player character and abilities /Bosses - Boss logic, animations, and arenas /World - Overworld map, entrances, props, and arena scenes /UI - Menus and HUD elements /Scripts - Global managers and utilities /Assets - Raw tilesets, sprites, and unused resources
 
 ---
 
