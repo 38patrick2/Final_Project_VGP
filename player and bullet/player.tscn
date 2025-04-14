@@ -1,0 +1,168 @@
+[gd_scene load_steps=34 format=3 uid="uid://cfavj811fy732"]
+
+[ext_resource type="Texture2D" uid="uid://b7nn1jnpenx5s" path="res://Little Mage/Dead/AttackCrystal1.png" id="1_6n40j"]
+[ext_resource type="Script" path="res://player.gd" id="1_46lh4"]
+[ext_resource type="Texture2D" uid="uid://dbtdtjerhegdy" path="res://Little Mage/Dead/AttackCrystal2.png" id="2_kj2yt"]
+[ext_resource type="Texture2D" uid="uid://bmb2dh4lo4r1f" path="res://Little Mage/Dead/AttackCrystal3.png" id="3_knqoh"]
+[ext_resource type="Texture2D" uid="uid://cwt6agl7efkyx" path="res://Little Mage/Dead/AttackCrystal4.png" id="4_jgarg"]
+[ext_resource type="Texture2D" uid="uid://byh8h6d8kygxy" path="res://Little Mage/Dead/AttackCrystal5.png" id="5_6fgev"]
+[ext_resource type="Texture2D" uid="uid://brscei066ydvh" path="res://Little Mage/Dead/AttackCrystal6.png" id="6_rkwoq"]
+[ext_resource type="Texture2D" uid="uid://h84l3nhk1bar" path="res://Little Mage/Dying/Dying1.png" id="7_wr7tp"]
+[ext_resource type="Texture2D" uid="uid://dx7l3k0cjktyy" path="res://Little Mage/Dying/Dying2.png" id="8_e8sg6"]
+[ext_resource type="Texture2D" uid="uid://dly6qiiayj2" path="res://Little Mage/Dying/Dying3.png" id="9_0ddmh"]
+[ext_resource type="Texture2D" uid="uid://dmaus2dr8lnk4" path="res://Little Mage/Dying/Dying4.png" id="10_86dv5"]
+[ext_resource type="Texture2D" uid="uid://ckp278hu4hq12" path="res://Little Mage/Dying/Dying5.png" id="11_47oad"]
+[ext_resource type="Texture2D" uid="uid://cjwrsuhnss36d" path="res://Little Mage/Dying/Dying6.png" id="12_lbcxr"]
+[ext_resource type="Texture2D" uid="uid://ckv1k5xkf82qc" path="res://Little Mage/Idle/Idle1.png" id="13_kloy4"]
+[ext_resource type="Texture2D" uid="uid://bkabhytdegu3m" path="res://Little Mage/Idle/Idle4.png" id="14_rp87b"]
+[ext_resource type="Texture2D" uid="uid://vhpifqiases5" path="res://Little Mage/Idle/Idle2.png" id="15_y2h72"]
+[ext_resource type="Texture2D" uid="uid://rm71jyppb3ag" path="res://Little Mage/Idle/Idle6.png" id="16_wgtb3"]
+[ext_resource type="Texture2D" uid="uid://3rr7qaugtp7b" path="res://Little Mage/Idle/Idle5.png" id="17_2qij8"]
+[ext_resource type="Texture2D" uid="uid://cepi2b76cyp4l" path="res://Little Mage/Idle/Idle3.png" id="18_8tldl"]
+[ext_resource type="Texture2D" uid="uid://bx3nknihwipe1" path="res://Little Mage/Rising - Jumping/Rising1.png" id="19_08gop"]
+[ext_resource type="Texture2D" uid="uid://dciiwlrxxmxqr" path="res://Little Mage/Rising - Jumping/Rising2.png" id="20_8w78c"]
+[ext_resource type="Texture2D" uid="uid://etlp1sk7k2rk" path="res://Little Mage/Rising - Jumping/Rising3.png" id="21_b8iit"]
+[ext_resource type="Texture2D" uid="uid://m1tixhn7mxnh" path="res://Little Mage/Rising - Jumping/Rising4.png" id="22_d1nrp"]
+[ext_resource type="Texture2D" uid="uid://e55mk31j8nks" path="res://Little Mage/Rising - Jumping/Rising5.png" id="23_p41c3"]
+[ext_resource type="Texture2D" uid="uid://ces4u3shubxrd" path="res://Little Mage/Rising - Jumping/Rising6.png" id="24_rs1rr"]
+[ext_resource type="Texture2D" uid="uid://dmmx476jhb47p" path="res://Little Mage/Run/Run1.png" id="25_5ji03"]
+[ext_resource type="Texture2D" uid="uid://dwyqefd5s5wxi" path="res://Little Mage/Run/Run2.png" id="26_410qs"]
+[ext_resource type="Texture2D" uid="uid://cx2s7hb6gc1xk" path="res://Little Mage/Run/Run3.png" id="27_uyufa"]
+[ext_resource type="Texture2D" uid="uid://dmuvuhtw1r6aa" path="res://Little Mage/Run/Run4.png" id="28_csiy2"]
+[ext_resource type="Texture2D" uid="uid://bcd1kkf1oy0ps" path="res://Little Mage/Run/Run5.png" id="29_k1rsm"]
+[ext_resource type="Texture2D" uid="uid://cepud884rd4c3" path="res://Little Mage/Run/Run6.png" id="30_w86fs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egjfe"]
+size = Vector2(33, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llmxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6n40j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kj2yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_knqoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jgarg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6fgev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rkwoq")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wr7tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e8sg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0ddmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_86dv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_47oad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lbcxr")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kloy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rp87b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_y2h72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wgtb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2qij8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8tldl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_08gop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8w78c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_b8iit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_d1nrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_p41c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rs1rr")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_5ji03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_410qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_uyufa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_csiy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_k1rsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_w86fs")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_46lh4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(28.5, 29)
+shape = SubResource("RectangleShape2D_egjfe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, 26)
+scale = Vector2(3.21094, 3.21094)
+sprite_frames = SubResource("SpriteFrames_llmxx")
+animation = &"idle"
+frame_progress = 0.213642
