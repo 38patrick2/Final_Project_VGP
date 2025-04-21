@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ftroodjfqjo"]
+
+[ext_resource type="Script" path="res://World/boss_lair_entrance.gd" id="1_d13hq"]
+[ext_resource type="Texture2D" uid="uid://ckr60gl2hms1d" path="res://Assets/Objects_separately/Cave_entrance2_grass_shadow.png" id="2_gj2fg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_io8ug"]
+radius = 17.1172
+
+[node name="Boss_Lair_Entrance" type="Area2D"]
+script = ExtResource("1_d13hq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+texture = ExtResource("2_gj2fg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 42)
+shape = SubResource("CircleShape2D_io8ug")
