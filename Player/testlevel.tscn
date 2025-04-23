@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://mo6m84y0cwby"]
+
+[ext_resource type="PackedScene" uid="uid://qybxtn4xfo3i" path="res://Player/player.tscn" id="1_ccec4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jujrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8b6q"]
+size = Vector2(13.6375, 1.5625)
+
+[node name="Testlevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ccec4")]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(49, 91)
+scale = Vector2(20, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+position = Vector2(4.3, 3.425)
+scale = Vector2(13.6, 1.45)
+texture = SubResource("CanvasTexture_jujrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(4.33125, 3.41875)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_y8b6q")

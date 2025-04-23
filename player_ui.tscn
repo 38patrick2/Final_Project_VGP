@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl3s4686pe02y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17ks5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb0y0"]
+bg_color = Color(0.780478, 0.291641, 0.312006, 1)
+
+[node name="PlayerUI" type="CanvasLayer"]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(150, 20)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 241.0
+offset_bottom = 37.0
+theme_override_styles/background = SubResource("StyleBoxFlat_17ks5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wb0y0")
+value = 100.0
+show_percentage = false
