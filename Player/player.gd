@@ -6,6 +6,10 @@ extends CharacterBody2D
 @onready var bullet_scene = preload("res://Player/bullet.tscn")
 var is_attacking = false
 @onready var attack_timer = Timer.new()
+@onready var health_bar := $PlayerUI/HealthBar
+
+var max_health := 100
+var current_health := 100
 
 func _ready():
 	add_child(attack_timer)
@@ -63,3 +67,27 @@ func shoot():
 
 func _on_attack_timer_timeout():
 	is_attacking = false
+	
+func update_health_bar():
+	health_bar.value = current_health
+
+func take_damage(amount):
+	if is_attacking:
+		return
+
+	current_health -= amount
+	current_health = clamp(current_health, 0, max_health)
+	update_health_bar()
+
+	if current_health <= 0:
+		die()
+		
+func die():
+	$AnimatedSprite2D.play("death")
+	set_physics_process(false)
+	await $AnimatedSprite2D.animation_finished
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		body.take_damage(20)
