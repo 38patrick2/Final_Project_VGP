@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://ccwjtwgvpsnlu" path="res://Assets/Little Mage/Run/Run4.png" id="28_xvuvw"]
 [ext_resource type="Texture2D" uid="uid://dq0wdlq47w2ai" path="res://Assets/Little Mage/Run/Run5.png" id="29_ybw74"]
 [ext_resource type="Texture2D" uid="uid://cbo42mn71oplf" path="res://Assets/Little Mage/Run/Run6.png" id="30_abl1s"]
-[ext_resource type="PackedScene" uid="uid://bl3s4686pe02y" path="res://player_ui.tscn" id="38_mct53"]
+[ext_resource type="PackedScene" path="res://player_ui.tscn" id="38_tyjof"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nebuq"]
 animations = [{
@@ -187,13 +187,13 @@ size = Vector2(18.5, 26.5)
 script = ExtResource("1_50ms3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(42, 74)
+position = Vector2(37.5, 70.5)
 scale = Vector2(1.78125, 1.96875)
 sprite_frames = SubResource("SpriteFrames_nebuq")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(42, 75)
+position = Vector2(37.75, 72)
 shape = SubResource("RectangleShape2D_nti2j")
 
-[node name="PlayerUI" parent="." instance=ExtResource("38_mct53")]
+[node name="PlayerUI" parent="." instance=ExtResource("38_tyjof")]

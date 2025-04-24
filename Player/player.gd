@@ -67,7 +67,7 @@ func shoot():
 
 func _on_attack_timer_timeout():
 	is_attacking = false
-	
+
 func update_health_bar():
 	health_bar.value = current_health
 
