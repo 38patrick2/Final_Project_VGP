@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbmw0raaa1hus"]
+[gd_scene load_steps=12 format=3 uid="uid://cbmw0raaa1hus"]
 
 [ext_resource type="Texture2D" uid="uid://w3wopglsgibs" path="res://Assets/ae3da1a24b609e1acfda0a2afe5ae0ca.jpg" id="1_3eghi"]
 [ext_resource type="Texture2D" uid="uid://cg0c83k3x5v04" path="res://Assets/Mossy Assets/Mossy - FloatingPlatforms.png" id="2_yhi68"]
@@ -25,6 +25,9 @@ shadow_size = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jp47x"]
 size = Vector2(84, 777)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy5pi"]
+size = Vector2(1212, 87.5)
 
 [node name="BossLair" type="Node2D"]
 
@@ -108,3 +111,10 @@ shape = SubResource("RectangleShape2D_jp47x")
 light_mask = 3
 position = Vector2(1196, 360)
 shape = SubResource("RectangleShape2D_jp47x")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(380, -97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(226, 98.25)
+shape = SubResource("RectangleShape2D_xy5pi")

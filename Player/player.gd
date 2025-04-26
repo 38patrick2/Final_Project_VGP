@@ -58,12 +58,18 @@ func shoot():
 	is_attacking = true
 	$AnimatedSprite2D.play("attack")
 	attack_timer.start()
+
 	var bullet = bullet_scene.instantiate()
+	# 1) add it to the same parent as the player
 	get_parent().add_child(bullet)
+
+	# 2) point it at the mouse
 	var mouse_pos = get_global_mouse_position()
-	var dir = (mouse_pos - global_position).normalized()
+	var dir       = (mouse_pos - global_position).normalized()
 	bullet.direction = dir
-	bullet.position = global_position + dir * 20
+
+	# 3) spawn it exactly at your Muzzle Position2D
+	bullet.global_position = $Muzzle.global_position
 
 func _on_attack_timer_timeout():
 	is_attacking = false
@@ -90,4 +96,4 @@ func die():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		body.take_damage(20)
+		body.take_damage(25)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://qybxtn4xfo3i"]
+[gd_scene load_steps=44 format=3 uid="uid://qybxtn4xfo3i"]
 
 [ext_resource type="Script" uid="uid://syamthef6stf" path="res://Player/player.gd" id="1_50ms3"]
 [ext_resource type="Texture2D" uid="uid://crejlcterfxlp" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Attack/StaffMighty/AttackMighty1.png" id="1_cakfj"]
@@ -26,9 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://dfkpn8p118fe7" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Idle/Idle6.png" id="18_12o8t"]
 [ext_resource type="Texture2D" uid="uid://d1nhf36r86vqr" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising1.png" id="19_475qi"]
 [ext_resource type="Texture2D" uid="uid://cr7lfo3b4n3hy" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Falling/Falling6.png" id="19_an6ab"]
+[ext_resource type="Texture2D" uid="uid://b8acm5hskkooc" path="res://Assets/Little Mage/Hit/Hit1.png" id="20_8ynux"]
 [ext_resource type="Texture2D" uid="uid://gdgnxwuiv5bp" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising2.png" id="20_nqqe2"]
+[ext_resource type="Texture2D" uid="uid://bdgtymaxfmcgq" path="res://Assets/Little Mage/Hit/Hit2.png" id="21_d30e8"]
 [ext_resource type="Texture2D" uid="uid://cqlcchn8jb8s3" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising3.png" id="21_jlpjy"]
 [ext_resource type="Texture2D" uid="uid://7dwfw5oilwrl" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising4.png" id="22_3nppu"]
+[ext_resource type="Texture2D" uid="uid://dmltf81amubcp" path="res://Assets/Little Mage/Hit/Hit3.png" id="22_6pogt"]
 [ext_resource type="Texture2D" uid="uid://dy7bps6p6j8ru" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising5.png" id="23_cj0fa"]
 [ext_resource type="Texture2D" uid="uid://7fnnoispu6i8" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising6.png" id="24_4rou0"]
 [ext_resource type="Texture2D" uid="uid://dftm2erslmkeu" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Run/Run1.png" id="25_chklt"]
@@ -108,6 +111,20 @@ animations = [{
 "loop": true,
 "name": &"fall",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_8ynux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_d30e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6pogt")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -191,18 +208,20 @@ border_width_bottom = 1
 shadow_size = 2
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(184, 153)
 collision_mask = 3
 script = ExtResource("1_50ms3")
 speed = 250
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(117, 136)
 scale = Vector2(4.3125, 4.51562)
 sprite_frames = SubResource("SpriteFrames_nebuq")
-animation = &"idle"
+animation = &"hit"
+frame = 2
+frame_progress = 0.679514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(118, 132)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_nti2j")
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
@@ -216,5 +235,5 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_qs4pp")
 value = 100.0
 show_percentage = false
 
-[node name="AimPoint" type="Marker2D" parent="."]
-position = Vector2(120, 132)
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(76, -7)
