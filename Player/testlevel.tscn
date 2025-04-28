@@ -22,5 +22,5 @@ texture = SubResource("CanvasTexture_jujrq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 position = Vector2(4.33125, 3.41875)
-scale = Vector2(1, 1)
+
 shape = SubResource("RectangleShape2D_y8b6q")

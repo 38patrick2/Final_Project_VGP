@@ -1,43 +1,45 @@
-[gd_scene load_steps=41 format=3 uid="uid://qybxtn4xfo3i"]
+[gd_scene load_steps=44 format=3 uid="uid://qybxtn4xfo3i"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_50ms3"]
-[ext_resource type="Texture2D" uid="uid://crejlcterfxlp" path="res://Assets/Little Mage/Attack/StaffMighty/AttackMighty1.png" id="1_cakfj"]
-[ext_resource type="Texture2D" uid="uid://mjyljixnp33b" path="res://Assets/Little Mage/Attack/StaffMighty/AttackMighty2.png" id="2_spjsx"]
-[ext_resource type="Texture2D" uid="uid://cbd8x3gox5b7t" path="res://Assets/Little Mage/Attack/StaffMighty/AttackMighty3.png" id="3_48gdu"]
-[ext_resource type="Texture2D" uid="uid://w650gyir02rk" path="res://Assets/Little Mage/Attack/StaffMighty/AttackMighty4.png" id="4_jjptg"]
-[ext_resource type="Texture2D" uid="uid://doeawrl2mfc3a" path="res://Assets/Little Mage/Attack/StaffMighty/AttackMighty5.png" id="5_uh11l"]
-[ext_resource type="Texture2D" uid="uid://dkqngmlthksa8" path="res://Assets/Little Mage/Attack/StaffMighty/AttackMighty6.png" id="6_fmue0"]
-[ext_resource type="Texture2D" uid="uid://brg52fslua3eb" path="res://Assets/Little Mage/Dying/Dying1.png" id="7_idb4t"]
-[ext_resource type="Texture2D" uid="uid://7bknyh0bs2qc" path="res://Assets/Little Mage/Dying/Dying2.png" id="8_6ahcw"]
-[ext_resource type="Texture2D" uid="uid://bv7k574aey8b4" path="res://Assets/Little Mage/Dying/Dying3.png" id="9_hmatw"]
-[ext_resource type="Texture2D" uid="uid://dkogc3rv7uye0" path="res://Assets/Little Mage/Dying/Dying4.png" id="10_ln052"]
-[ext_resource type="Texture2D" uid="uid://b32pk6yh2k6mh" path="res://Assets/Little Mage/Dying/Dying5.png" id="11_4o6v7"]
-[ext_resource type="Texture2D" uid="uid://bsqqi880v26p1" path="res://Assets/Little Mage/Dying/Dying6.png" id="12_v7ome"]
-[ext_resource type="Texture2D" uid="uid://cebaahpwp8aat" path="res://Assets/Little Mage/Idle/Idle1.png" id="13_mrtlx"]
-[ext_resource type="Texture2D" uid="uid://bbb51rj4jer1t" path="res://Assets/Little Mage/Idle/Idle2.png" id="14_c0msb"]
-[ext_resource type="Texture2D" uid="uid://cxmvs3o8rkrqa" path="res://Assets/Little Mage/Falling/Falling1.png" id="14_d23dk"]
-[ext_resource type="Texture2D" uid="uid://cyrel0f34abp7" path="res://Assets/Little Mage/Idle/Idle3.png" id="15_jemqk"]
-[ext_resource type="Texture2D" uid="uid://lro8i7onmakg" path="res://Assets/Little Mage/Falling/Falling2.png" id="15_lgv1c"]
-[ext_resource type="Texture2D" uid="uid://b6lmm4jnbsuu0" path="res://Assets/Little Mage/Falling/Falling3.png" id="16_kuvqx"]
-[ext_resource type="Texture2D" uid="uid://bsweu108vy2rn" path="res://Assets/Little Mage/Idle/Idle5.png" id="16_vcot4"]
-[ext_resource type="Texture2D" uid="uid://gk5s25u6ebg8" path="res://Assets/Little Mage/Idle/Idle4.png" id="17_61o6j"]
-[ext_resource type="Texture2D" uid="uid://cvq4wr26msjo7" path="res://Assets/Little Mage/Falling/Falling4.png" id="17_hx5dd"]
-[ext_resource type="Texture2D" uid="uid://nmcnf3g5vh6u" path="res://Assets/Little Mage/Falling/Falling5.png" id="18_6ffnv"]
-[ext_resource type="Texture2D" uid="uid://dfkpn8p118fe7" path="res://Assets/Little Mage/Idle/Idle6.png" id="18_12o8t"]
-[ext_resource type="Texture2D" uid="uid://d1nhf36r86vqr" path="res://Assets/Little Mage/Rising - Jumping/Rising1.png" id="19_475qi"]
-[ext_resource type="Texture2D" uid="uid://cr7lfo3b4n3hy" path="res://Assets/Little Mage/Falling/Falling6.png" id="19_an6ab"]
-[ext_resource type="Texture2D" uid="uid://gdgnxwuiv5bp" path="res://Assets/Little Mage/Rising - Jumping/Rising2.png" id="20_nqqe2"]
-[ext_resource type="Texture2D" uid="uid://cqlcchn8jb8s3" path="res://Assets/Little Mage/Rising - Jumping/Rising3.png" id="21_jlpjy"]
-[ext_resource type="Texture2D" uid="uid://7dwfw5oilwrl" path="res://Assets/Little Mage/Rising - Jumping/Rising4.png" id="22_3nppu"]
-[ext_resource type="Texture2D" uid="uid://dy7bps6p6j8ru" path="res://Assets/Little Mage/Rising - Jumping/Rising5.png" id="23_cj0fa"]
-[ext_resource type="Texture2D" uid="uid://7fnnoispu6i8" path="res://Assets/Little Mage/Rising - Jumping/Rising6.png" id="24_4rou0"]
-[ext_resource type="Texture2D" uid="uid://dftm2erslmkeu" path="res://Assets/Little Mage/Run/Run1.png" id="25_chklt"]
-[ext_resource type="Texture2D" uid="uid://b104v0k6ya7et" path="res://Assets/Little Mage/Run/Run2.png" id="26_lvv2x"]
-[ext_resource type="Texture2D" uid="uid://1g6qnhsam541" path="res://Assets/Little Mage/Run/Run3.png" id="27_2hyet"]
-[ext_resource type="Texture2D" uid="uid://ccwjtwgvpsnlu" path="res://Assets/Little Mage/Run/Run4.png" id="28_xvuvw"]
-[ext_resource type="Texture2D" uid="uid://dq0wdlq47w2ai" path="res://Assets/Little Mage/Run/Run5.png" id="29_ybw74"]
-[ext_resource type="Texture2D" uid="uid://cbo42mn71oplf" path="res://Assets/Little Mage/Run/Run6.png" id="30_abl1s"]
-[ext_resource type="PackedScene" path="res://player_ui.tscn" id="38_tyjof"]
+[ext_resource type="Script" uid="uid://syamthef6stf" path="res://Player/player.gd" id="1_50ms3"]
+[ext_resource type="Texture2D" uid="uid://crejlcterfxlp" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Attack/StaffMighty/AttackMighty1.png" id="1_cakfj"]
+[ext_resource type="Texture2D" uid="uid://mjyljixnp33b" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Attack/StaffMighty/AttackMighty2.png" id="2_spjsx"]
+[ext_resource type="Texture2D" uid="uid://cbd8x3gox5b7t" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Attack/StaffMighty/AttackMighty3.png" id="3_48gdu"]
+[ext_resource type="Texture2D" uid="uid://w650gyir02rk" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Attack/StaffMighty/AttackMighty4.png" id="4_jjptg"]
+[ext_resource type="Texture2D" uid="uid://doeawrl2mfc3a" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Attack/StaffMighty/AttackMighty5.png" id="5_uh11l"]
+[ext_resource type="Texture2D" uid="uid://dkqngmlthksa8" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Attack/StaffMighty/AttackMighty6.png" id="6_fmue0"]
+[ext_resource type="Texture2D" uid="uid://brg52fslua3eb" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Dying/Dying1.png" id="7_idb4t"]
+[ext_resource type="Texture2D" uid="uid://7bknyh0bs2qc" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Dying/Dying2.png" id="8_6ahcw"]
+[ext_resource type="Texture2D" uid="uid://bv7k574aey8b4" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Dying/Dying3.png" id="9_hmatw"]
+[ext_resource type="Texture2D" uid="uid://dkogc3rv7uye0" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Dying/Dying4.png" id="10_ln052"]
+[ext_resource type="Texture2D" uid="uid://b32pk6yh2k6mh" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Dying/Dying5.png" id="11_4o6v7"]
+[ext_resource type="Texture2D" uid="uid://bsqqi880v26p1" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Dying/Dying6.png" id="12_v7ome"]
+[ext_resource type="Texture2D" uid="uid://cebaahpwp8aat" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Idle/Idle1.png" id="13_mrtlx"]
+[ext_resource type="Texture2D" uid="uid://bbb51rj4jer1t" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Idle/Idle2.png" id="14_c0msb"]
+[ext_resource type="Texture2D" uid="uid://cxmvs3o8rkrqa" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Falling/Falling1.png" id="14_d23dk"]
+[ext_resource type="Texture2D" uid="uid://cyrel0f34abp7" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Idle/Idle3.png" id="15_jemqk"]
+[ext_resource type="Texture2D" uid="uid://lro8i7onmakg" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Falling/Falling2.png" id="15_lgv1c"]
+[ext_resource type="Texture2D" uid="uid://b6lmm4jnbsuu0" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Falling/Falling3.png" id="16_kuvqx"]
+[ext_resource type="Texture2D" uid="uid://bsweu108vy2rn" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Idle/Idle5.png" id="16_vcot4"]
+[ext_resource type="Texture2D" uid="uid://gk5s25u6ebg8" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Idle/Idle4.png" id="17_61o6j"]
+[ext_resource type="Texture2D" uid="uid://cvq4wr26msjo7" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Falling/Falling4.png" id="17_hx5dd"]
+[ext_resource type="Texture2D" uid="uid://nmcnf3g5vh6u" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Falling/Falling5.png" id="18_6ffnv"]
+[ext_resource type="Texture2D" uid="uid://dfkpn8p118fe7" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Idle/Idle6.png" id="18_12o8t"]
+[ext_resource type="Texture2D" uid="uid://d1nhf36r86vqr" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising1.png" id="19_475qi"]
+[ext_resource type="Texture2D" uid="uid://cr7lfo3b4n3hy" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Falling/Falling6.png" id="19_an6ab"]
+[ext_resource type="Texture2D" uid="uid://b8acm5hskkooc" path="res://Assets/Little Mage/Hit/Hit1.png" id="20_8ynux"]
+[ext_resource type="Texture2D" uid="uid://gdgnxwuiv5bp" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising2.png" id="20_nqqe2"]
+[ext_resource type="Texture2D" uid="uid://bdgtymaxfmcgq" path="res://Assets/Little Mage/Hit/Hit2.png" id="21_d30e8"]
+[ext_resource type="Texture2D" uid="uid://cqlcchn8jb8s3" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising3.png" id="21_jlpjy"]
+[ext_resource type="Texture2D" uid="uid://7dwfw5oilwrl" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising4.png" id="22_3nppu"]
+[ext_resource type="Texture2D" uid="uid://dmltf81amubcp" path="res://Assets/Little Mage/Hit/Hit3.png" id="22_6pogt"]
+[ext_resource type="Texture2D" uid="uid://dy7bps6p6j8ru" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising5.png" id="23_cj0fa"]
+[ext_resource type="Texture2D" uid="uid://7fnnoispu6i8" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Rising - Jumping/Rising6.png" id="24_4rou0"]
+[ext_resource type="Texture2D" uid="uid://dftm2erslmkeu" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Run/Run1.png" id="25_chklt"]
+[ext_resource type="Texture2D" uid="uid://b104v0k6ya7et" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Run/Run2.png" id="26_lvv2x"]
+[ext_resource type="Texture2D" uid="uid://1g6qnhsam541" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Run/Run3.png" id="27_2hyet"]
+[ext_resource type="Texture2D" uid="uid://ccwjtwgvpsnlu" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Run/Run4.png" id="28_xvuvw"]
+[ext_resource type="Texture2D" uid="uid://dq0wdlq47w2ai" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Run/Run5.png" id="29_ybw74"]
+[ext_resource type="Texture2D" uid="uid://cbo42mn71oplf" path="res://Assets-20250425T223413Z-001/Assets/Little Mage/Run/Run6.png" id="30_abl1s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nebuq"]
 animations = [{
@@ -112,6 +114,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_8ynux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_d30e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6pogt")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+
 "texture": ExtResource("13_mrtlx")
 }, {
 "duration": 1.0,
@@ -181,19 +198,44 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nti2j"]
-size = Vector2(18.5, 26.5)
+size = Vector2(44, 76.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qs4pp"]
+bg_color = Color(0.309018, 0.707423, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+shadow_size = 2
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(184, 153)
+collision_mask = 3
 script = ExtResource("1_50ms3")
+speed = 250
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(37.5, 70.5)
-scale = Vector2(1.78125, 1.96875)
+scale = Vector2(4.3125, 4.51562)
 sprite_frames = SubResource("SpriteFrames_nebuq")
-animation = &"attack"
+animation = &"hit"
+frame = 2
+frame_progress = 0.679514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(37.75, 72)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_nti2j")
 
-[node name="PlayerUI" parent="." instance=ExtResource("38_tyjof")]
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerUI"]
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 336.0
+offset_bottom = 35.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_qs4pp")
+value = 100.0
+show_percentage = false
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(76, -7)
+
