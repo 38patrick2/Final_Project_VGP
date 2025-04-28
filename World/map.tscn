@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://yewe1pr5ukrh" path="res://Assets/village-pixel-tileset-top-down/2 Objects/4 Box/1.png" id="19_vl0l8"]
 [ext_resource type="Texture2D" uid="uid://c2s0ettarsuos" path="res://Assets/village-pixel-tileset-top-down/2 Objects/4 Box/5.png" id="20_ugxe8"]
 
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00kyn"]
 texture = ExtResource("1_vi3qm")
 texture_region_size = Vector2i(40, 40)

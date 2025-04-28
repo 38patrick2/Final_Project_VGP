@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 200
 @export var jump_velocity := -450
+
 @export var gravity := 500
 @onready var bullet_scene = preload("res://Player/bullet.tscn")
 var is_attacking = false
@@ -97,3 +98,4 @@ func die():
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		body.take_damage(25)
+
