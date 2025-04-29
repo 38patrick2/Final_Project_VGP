@@ -93,9 +93,9 @@ func die():
 	$AnimatedSprite2D.play("death")
 	set_physics_process(false)
 	await $AnimatedSprite2D.animation_finished
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	var boss_scene = get_tree().current_scene.filename
+	get_tree().get_current_scene().get_node("CanvasLayer/DeathPopup").setup(boss_scene)
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		body.take_damage(25)
-

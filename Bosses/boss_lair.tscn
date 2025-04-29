@@ -1,10 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbmw0raaa1hus"]
+[gd_scene load_steps=14 format=3 uid="uid://cbmw0raaa1hus"]
 
 [ext_resource type="Texture2D" uid="uid://w3wopglsgibs" path="res://Assets/ae3da1a24b609e1acfda0a2afe5ae0ca.jpg" id="1_3eghi"]
 [ext_resource type="Texture2D" uid="uid://cg0c83k3x5v04" path="res://Assets/Mossy Assets/Mossy - FloatingPlatforms.png" id="2_yhi68"]
 [ext_resource type="Texture2D" uid="uid://bp3wxqbluo0p1" path="res://Assets/Mossy - FloatingPlatforms.png" id="3_pwcho"]
 [ext_resource type="PackedScene" uid="uid://qybxtn4xfo3i" path="res://Player/player.tscn" id="4_7f373"]
 [ext_resource type="PackedScene" uid="uid://dgexycpynnagw" path="res://Bosses/crystal_boss.tscn" id="5_5a2x1"]
+[ext_resource type="PackedScene" uid="uid://dcwx60itj4fib" path="res://UI/victory_popup.tscn" id="6_bmyxt"]
+[ext_resource type="PackedScene" uid="uid://egklbwcvth6" path="res://UI/DeathPopup.tscn" id="7_m8tba"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3dqy"]
+bg_color = Color(0.880774, 0, 0.252583, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 1)
+shadow_size = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbrds"]
 size = Vector2(258, 40)
@@ -14,14 +24,6 @@ size = Vector2(264, 43.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0oqo"]
 size = Vector2(1156.5, 75.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3dqy"]
-bg_color = Color(0.880774, 0, 0.252583, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_color = Color(0, 0, 0, 1)
-shadow_size = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jp47x"]
 size = Vector2(84, 777)
@@ -45,6 +47,44 @@ z_index = -1
 position = Vector2(578, 326)
 scale = Vector2(1.56539, 1.59559)
 texture = ExtResource("1_3eghi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DeathPopup" parent="CanvasLayer" instance=ExtResource("7_m8tba")]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 235.0
+offset_top = 147.0
+offset_right = 908.0
+offset_bottom = 561.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="BossHealthBarUI" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -314.0
+offset_right = 571.0
+offset_bottom = -279.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_m3dqy")
+value = 100.0
+show_percentage = false
+
+[node name="VictoryPopup" parent="CanvasLayer" instance=ExtResource("6_bmyxt")]
+offset_left = -40.0
+offset_top = 4.0
+offset_right = 0.0
+offset_bottom = 44.0
 
 [node name="Platform" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -80,24 +120,6 @@ shape = SubResource("RectangleShape2D_a0oqo")
 position = Vector2(570, 673)
 scale = Vector2(0.631073, 0.404736)
 texture = ExtResource("3_pwcho")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="BossHealthBarUI" type="ProgressBar" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = -314.0
-offset_right = 571.0
-offset_bottom = -279.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/fill = SubResource("StyleBoxFlat_m3dqy")
-value = 100.0
-show_percentage = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
