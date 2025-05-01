@@ -9,8 +9,8 @@ extends CharacterBody2D
 @onready var pause_timer: Timer = $pause_timer
 @onready var bullet_timer: Timer = $bullet_timer
 @onready var health_bar: ProgressBar = get_tree().get_current_scene().get_node("CanvasLayer/BossHealthBarUI")
-@onready var death_popup   = $CanvasLayer/DeathPopup
-@onready var victory_popup = $CanvasLayer/VictoryPopup
+@onready var death_popup   = $"../CanvasLayer/DeathPopup"
+@onready var victory_popup = $"../CanvasLayer/VictoryPopup"
 
 var health: int = 100
 var can_take_damage: bool = true

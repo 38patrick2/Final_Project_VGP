@@ -85,9 +85,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_v7ome")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -216,9 +216,7 @@ speed = 250
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4.3125, 4.51562)
 sprite_frames = SubResource("SpriteFrames_nebuq")
-animation = &"hit"
-frame = 2
-frame_progress = 0.679514
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

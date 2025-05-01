@@ -93,8 +93,11 @@ func die():
 	$AnimatedSprite2D.play("death")
 	set_physics_process(false)
 	await $AnimatedSprite2D.animation_finished
-	var boss_scene = get_tree().current_scene.filename
-	get_tree().get_current_scene().get_node("CanvasLayer/DeathPopup").setup(boss_scene)
+	var popup = get_tree().get_current_scene().get_node("CanvasLayer/DeathPopup")
+	print("DEBUG >> popup   = ", popup)             # <-- add this
+	print("DEBUG >> visible = ", popup.visible)     # <-- add this
+	var scene_path : String = get_tree().current_scene.scene_file_path   # Godot 4
+	popup.setup(scene_path) 
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
