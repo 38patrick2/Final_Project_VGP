@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://cbmw0raaa1hus"]
 
-[ext_resource type="Texture2D" uid="uid://w3wopglsgibs" path="res://Assets/ae3da1a24b609e1acfda0a2afe5ae0ca.jpg" id="1_3eghi"]
-[ext_resource type="Texture2D" uid="uid://cg0c83k3x5v04" path="res://Assets/Mossy Assets/Mossy - FloatingPlatforms.png" id="2_yhi68"]
-[ext_resource type="Texture2D" uid="uid://bp3wxqbluo0p1" path="res://Assets/Mossy - FloatingPlatforms.png" id="3_pwcho"]
+[ext_resource type="Texture2D" uid="uid://c80q3vqwnsyks" path="res://Assets/ae3da1a24b609e1acfda0a2afe5ae0ca.jpg" id="1_3eghi"]
+[ext_resource type="Texture2D" uid="uid://n8bodfqrat6l" path="res://Assets/Mossy Assets/Mossy - FloatingPlatforms.png" id="2_yhi68"]
+[ext_resource type="Texture2D" uid="uid://ljr6xxaesab3" path="res://Assets/Mossy - FloatingPlatforms.png" id="3_pwcho"]
 [ext_resource type="PackedScene" uid="uid://qybxtn4xfo3i" path="res://Player/player.tscn" id="4_7f373"]
 [ext_resource type="PackedScene" uid="uid://dgexycpynnagw" path="res://Bosses/crystal_boss.tscn" id="5_5a2x1"]
 [ext_resource type="PackedScene" uid="uid://dcwx60itj4fib" path="res://UI/victory_popup.tscn" id="6_bmyxt"]

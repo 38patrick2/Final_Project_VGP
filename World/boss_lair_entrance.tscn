@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2ftroodjfqjo"]
 
 [ext_resource type="Script" path="res://World/boss_lair_entrance.gd" id="1_d13hq"]
-[ext_resource type="Texture2D" uid="uid://c2u8vrnohbyg6" path="res://Assets/Objects_separately/Cave_entrance2_grass_shadow.png" id="2_gj2fg"]
+[ext_resource type="Texture2D" uid="uid://ckr60gl2hms1d" path="res://Assets/Objects_separately/Cave_entrance2_grass_shadow.png" id="2_gj2fg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_io8ug"]
 radius = 17.1172

@@ -18,6 +18,13 @@ func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
 
-func _input(event):
-	if player_in_range and event.is_action_pressed("interact") and area_scene:
-		get_tree().change_scene_to_packed(area_scene)
+func _process(delta):
+	if player_in_range:
+		print("Player in range")
+	if player_in_range and Input.is_action_just_pressed("ui_interact"):
+		print("E pressed")
+		if area_scene:
+			print("Scene loaded")
+			get_tree().change_scene_to_packed(area_scene)
+		else:
+			print("No scene assigned")

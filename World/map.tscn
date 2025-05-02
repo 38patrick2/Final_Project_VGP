@@ -1,18 +1,21 @@
-[gd_scene load_steps=20 format=3 uid="uid://b53kuwpw1yvn3"]
+[gd_scene load_steps=23 format=3 uid="uid://b53kuwpw1yvn3"]
 
-[ext_resource type="Texture2D" uid="uid://cx74u0ujwnoh2" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
-[ext_resource type="Texture2D" uid="uid://c4himm2gayxj7" path="res://Assets/Env/survivalgame-terrian-defult.png" id="2_n4ymy"]
-[ext_resource type="Texture2D" uid="uid://cbaqbpe18gtc5" path="res://Assets/village-pixel-tileset-top-down/2 Objects/6 Tent/4.png" id="7_nk1lo"]
-[ext_resource type="Texture2D" uid="uid://dvc78m3otur18" path="res://Assets/village-pixel-tileset-top-down/2 Objects/6 Tent/2.png" id="8_g88eq"]
+[ext_resource type="Texture2D" uid="uid://bspgfrn84jpxq" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
+[ext_resource type="Texture2D" uid="uid://d01oe65t2iluv" path="res://Assets/Env/survivalgame-terrian-defult.png" id="2_n4ymy"]
+[ext_resource type="PackedScene" uid="uid://en6e6stc2iaq" path="res://World/Props/barrel.tscn" id="5_x0c0g"]
+[ext_resource type="PackedScene" uid="uid://bif8qqcnc4uh0" path="res://World/Props/box1.tscn" id="6_t7bsi"]
+[ext_resource type="PackedScene" uid="uid://bkxh7uymjl10w" path="res://World/Props/box_2.tscn" id="7_j5ra6"]
+[ext_resource type="PackedScene" uid="uid://8sf36f1oeoxi" path="res://World/Props/house_1.tscn" id="8_fgpea"]
 [ext_resource type="PackedScene" uid="uid://b2ftroodjfqjo" path="res://World/boss_lair_entrance.tscn" id="9_54knd"]
-[ext_resource type="Texture2D" uid="uid://c2u8vrnohbyg6" path="res://Assets/Objects_separately/Cave_entrance2_grass_shadow.png" id="10_2mp5n"]
+[ext_resource type="PackedScene" uid="uid://dadb4d6paftv8" path="res://World/Props/house_2.tscn" id="9_uvl6b"]
+[ext_resource type="Texture2D" uid="uid://ckr60gl2hms1d" path="res://Assets/Objects_separately/Cave_entrance2_grass_shadow.png" id="10_2mp5n"]
+[ext_resource type="PackedScene" uid="uid://1i62cdvo4m2o" path="res://World/Props/house_3.tscn" id="10_g8dwv"]
 [ext_resource type="PackedScene" uid="uid://db5xc87ths5dj" path="res://World/Arenas/boss_2_arena.tscn" id="11_d3y56"]
-[ext_resource type="Texture2D" uid="uid://d337nljyfc2r6" path="res://Assets/Objects_separately/Cave_entrance1_grass_shadow.png" id="12_apsjw"]
-[ext_resource type="Texture2D" uid="uid://dc2121uxpmhfm" path="res://Assets/Env/survivalgame-terrian-water copy.png" id="13_5c4ir"]
+[ext_resource type="Texture2D" uid="uid://kdmvvk0g52vi" path="res://Assets/Objects_separately/Cave_entrance1_grass_shadow.png" id="12_apsjw"]
+[ext_resource type="Texture2D" uid="uid://dddvpor38koci" path="res://Assets/Env/survivalgame-terrian-water copy.png" id="13_5c4ir"]
 [ext_resource type="PackedScene" uid="uid://dlob2f0fc75f" path="res://World/Arenas/boss_1_arena.tscn" id="13_b8kot"]
-[ext_resource type="Texture2D" uid="uid://brnqu6w3krgbg" path="res://Assets/Env/survivalgame-trees copy.png" id="14_h2vex"]
-[ext_resource type="Texture2D" uid="uid://dqckixigo0c08" path="res://Assets/village-pixel-tileset-top-down/2 Objects/4 Box/1.png" id="19_vl0l8"]
-[ext_resource type="Texture2D" uid="uid://brif4i0hvly41" path="res://Assets/village-pixel-tileset-top-down/2 Objects/4 Box/5.png" id="20_ugxe8"]
+[ext_resource type="PackedScene" uid="uid://dkvl1k0pc1ilk" path="res://World/player/player_map.tscn" id="14_dut3a"]
+[ext_resource type="Texture2D" uid="uid://diki6r0navl4l" path="res://Assets/Env/survivalgame-trees copy.png" id="14_h2vex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00kyn"]
 texture = ExtResource("1_vi3qm")
@@ -296,63 +299,36 @@ layer_2/name = "Obj"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(-458735, 1114115, 2, -393195, 1114115, 1, -196602, 1114115, 1, -65529, 524291, 2, -196570, 1114115, 1, -327639, 1114115, 1, -327637, 1114115, 0, -131031, 1114115, 0, -196576, 1114115, 0, -65505, 1114115, 0, 131102, 1114115, 0, 196640, 1114115, 0, 393254, 1114115, 0, 262182, 1114115, 0, 262179, 1114115, 0, 327720, 1114115, 1, 393261, 1114115, 1, 458794, 1114115, 1, 196659, 1114115, 1, 393271, 1114115, 1, 196662, 1114115, 1, 196655, 524291, 1, -131025, 524291, 1, 131097, 524291, 1, -65514, 524291, 1, 27, 524291, 1)
 
-[node name="Props" type="Area2D" parent="."]
-y_sort_enabled = true
-
-[node name="barrel3" type="Sprite2D" parent="Props"]
-position = Vector2(1540, 140)
-texture = ExtResource("19_vl0l8")
-
-[node name="barrel2" type="Sprite2D" parent="Props"]
-position = Vector2(741, -60)
-texture = ExtResource("19_vl0l8")
-
-[node name="barrel4" type="Sprite2D" parent="Props"]
-position = Vector2(1438, 9)
-texture = ExtResource("19_vl0l8")
-
-[node name="barrel" type="Sprite2D" parent="Props"]
-position = Vector2(580, -220)
-texture = ExtResource("19_vl0l8")
-
-[node name="box" type="Sprite2D" parent="Props"]
-position = Vector2(380, -100)
-texture = ExtResource("20_ugxe8")
-
-[node name="box2" type="Sprite2D" parent="Props"]
-position = Vector2(1339, 19)
-texture = ExtResource("20_ugxe8")
-
-[node name="box3" type="Sprite2D" parent="Props"]
-position = Vector2(1434.5, 137)
-scale = Vector2(1.16667, 1)
-texture = ExtResource("20_ugxe8")
-
-[node name="box4" type="Sprite2D" parent="Props"]
-position = Vector2(1620, 100)
-texture = ExtResource("20_ugxe8")
-
-[node name="tent" type="Sprite2D" parent="Props"]
-position = Vector2(1381, -10)
-texture = ExtResource("7_nk1lo")
-
-[node name="tent2" type="Sprite2D" parent="Props"]
-position = Vector2(1575, -18)
-texture = ExtResource("7_nk1lo")
-
-[node name="tent3" type="Sprite2D" parent="Props"]
-position = Vector2(1388, 111)
-texture = ExtResource("8_g88eq")
-
 [node name="colisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisions"]
 position = Vector2(-1, 1)
-polygon = PackedVector2Array(-9, 32, -49, 32, -48, 113, -129, 113, -127, 194, -188, 195, -220, 196, -238, 186, -258, 198, -277, 186, -295.635, 197.199, -352, 196, -356, 155, -536, 160, -636, 165, -635, 278, -639, 355, -319, 358, -315, 325, -290, 319, 67, 320, 77, 337, 79, 398, 265, 400, 278, 414, 279, 437, 441, 438, 437, 363, 332, 360, 324, 344, 324, 316, 291, 316, 282, 305, 282, 206, 362, 204, 367, 166, 405, 166, 405, 148, 458, 121, 470, 124, 479, 131, 484, 121, 485, 46, 719, 46, 722, -11, 771, -39, 824, -39, 871, -13, 872, 46, 904, 42, 916, 51, 915, 125, 1021, 121, 1148, 124, 1191, 146, 1194, 166, 1269, 163, 1311, 189, 1320, 202, 1408, 202, 1434, 201, 1468, 202, 1476, 217, 1476, 283, 1528, 282, 1552, 280, 1589, 283, 1596, 297, 1595, 363, 1655, 360, 1655, 269, 1666, 262, 1742, 266, 1748, 278, 1746, 360, 1839, 360, 1845, 225, 1900, 199, 2116, 203, 2181, 201, 2211, 200, 2211, -43, 2150, -41, 2147, -7, 2121, -4, 2120, -39, 2130, -46, 2134, -72, 2206, -75, 2209, -150, 2203, -165, 2136, -165, 2135, -198, 2229, -200, 2366, -203, 2367, -368, 2272, -366, 2273, -250, 2240, -241, 2217, -240, 2185, -246, 2159, -240, 2135, -239, 2137, -258, 2173, -259, 2173, -324, 1935, -324, 1936, -369, 1947, -376, 1974, -375, 1974, -407, 1935, -406, 1875, -405, 1877, -239, 1991, -239, 1996, -81, 2067, -77, 2071, -51, 2082, -40, 2082, -4, 2055, -9, 2054, -47, 1981, -46, 1971, -55, 1969, -203, 1857, -202, 1846, -217, 1846, -242, 1760, -247, 1692, -244, 1653, -245, 1596, -242, 1595, -201, 1567, -209, 1476, -201, 1476, -163, 1437, -165, 1435, -121, 1313, -122, 1296, -123, 1237, -118, 1235, -35, 1231, -4, 1114, 0, 1105, 2, 1089, 3, 1078, -1, 1004, -1, 1005, -240, 926, -240, 923, -282, 765, -279, 763, -320, 601, -316, 597, -281, 501, -280, 481, -271, 480, -241, 279, -238, 280, -141, 236, -138, 235, -115, 247, -101, 262, -99, 262, -87, 238, -87, 236, 15, 183, 42, 3, 33, 23, -8, 196, -13, 208, -118, 239, -215, 250, -278, 413, -289, 505, -321, 610, -375, 764, -363, 851, -316, 959, -317, 1036, -252, 1050, -165, 1078, -42, 1151, -45, 1204, -124, 1267, -194, 1417, -214, 1535, -287, 1697, -283, 1804, -322, 1821, -436, 1917, -463, 2006, -425, 2092, -381, 2175, -378, 2287, -411, 2439, -417, 2464, -281, 2423, -123, 2307, -54, 2289, 52, 2284, 179, 2245, 301, 2019, 294, 1879, 393, 1695, 410, 1460, 400, 1314, 286, 1144, 212, 913, 210, 787, 118, 625, 161, 482, 220, 467, 282, 540, 392, 455, 524, 261, 499, 81, 455, -166, 431, -334, 460, -566, 445, -726, 397, -737, 189, -636, 69, -466, 55, -320, 81, -200, 92, -118, 23, -35, -39, 17, -34, 10, 21, 21, 29)
+polygon = PackedVector2Array(-9, 32, -49, 32, -48, 113, -129, 113, -127, 194, -188, 195, -220, 196, -238, 186, -258, 194, -269, 186, -284, 185, -296, 193, -305, 193, -317, 185, -330, 192, -347, 194, -351, 157, -347, 146, -356, 141, -369, 144, -373, 155, -385, 154, -392, 144, -406, 145, -412, 155, -425, 156, -431, 144, -444, 144, -449, 155, -536, 160, -642, 161, -642, 276, -639, 355, -319, 358, -315, 325, -290, 319, 67, 320, 77, 337, 79, 398, 265, 400, 278, 414, 279, 437, 441, 438, 437, 363, 332, 360, 324, 344, 324, 316, 291, 316, 282, 305, 282, 206, 362, 204, 367, 166, 405, 166, 405, 148, 458, 121, 470, 124, 491, 139, 491, 120, 492, 98, 485, 46, 719, 46, 722, -11, 771, -39, 824, -39, 871, -13, 872, 46, 904, 42, 916, 51, 915, 125, 1021, 121, 1148, 124, 1191, 146, 1194, 166, 1269, 163, 1311, 189, 1320, 202, 1408, 202, 1434, 201, 1468, 202, 1476, 217, 1476, 283, 1528, 282, 1552, 280, 1589, 283, 1596, 297, 1595, 363, 1655, 360, 1655, 269, 1666, 262, 1742, 266, 1748, 278, 1746, 360, 1839, 360, 1845, 225, 1900, 199, 2116, 203, 2181, 201, 2211, 200, 2211, -43, 2150, -41, 2147, -7, 2121, -4, 2120, -39, 2130, -46, 2134, -72, 2206, -75, 2209, -150, 2203, -165, 2136, -165, 2135, -198, 2229, -200, 2366, -203, 2367, -368, 2272, -366, 2273, -250, 2240, -241, 2217, -240, 2185, -246, 2159, -240, 2135, -239, 2137, -258, 2173, -259, 2173, -324, 1935, -324, 1936, -369, 1947, -376, 1974, -375, 1974, -407, 1935, -406, 1875, -405, 1877, -239, 1991, -239, 1996, -81, 2067, -77, 2071, -51, 2082, -40, 2082, -4, 2055, -9, 2054, -47, 1981, -46, 1971, -55, 1969, -203, 1857, -202, 1846, -217, 1846, -242, 1760, -247, 1692, -244, 1653, -245, 1596, -242, 1595, -201, 1567, -209, 1476, -201, 1476, -163, 1437, -165, 1435, -121, 1313, -122, 1296, -123, 1237, -118, 1235, -35, 1231, -4, 1114, 0, 1105, 2, 1089, 3, 1078, -1, 1004, -1, 1005, -240, 926, -240, 923, -282, 765, -279, 763, -320, 601, -316, 597, -281, 501, -280, 481, -271, 480, -241, 279, -238, 280, -141, 236, -138, 235, -115, 247, -101, 262, -99, 262, -87, 238, -87, 236, 15, 183, 42, 3, 33, 23, -8, 196, -13, 208, -118, 239, -215, 250, -278, 413, -289, 505, -321, 610, -375, 764, -363, 851, -316, 959, -317, 1036, -252, 1050, -165, 1078, -42, 1151, -45, 1204, -124, 1267, -194, 1417, -214, 1535, -287, 1697, -283, 1804, -322, 1821, -436, 1917, -463, 2006, -425, 2092, -381, 2175, -378, 2287, -411, 2439, -417, 2464, -281, 2423, -123, 2307, -54, 2289, 52, 2284, 179, 2245, 301, 2019, 294, 1879, 393, 1695, 410, 1460, 400, 1314, 286, 1144, 212, 913, 210, 787, 118, 625, 161, 482, 220, 467, 282, 540, 392, 455, 524, 261, 499, 81, 455, -166, 431, -334, 460, -566, 445, -726, 397, -737, 189, -636, 69, -466, 55, -320, 81, -200, 92, -118, 23, -35, -39, 17, -34, 10, 21, 21, 29)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisions"]
 position = Vector2(1821, -90)
 shape = SubResource("RectangleShape2D_qaipr")
+
+[node name="Props" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Barrel" parent="Props" instance=ExtResource("5_x0c0g")]
+position = Vector2(-390, 203)
+
+[node name="Node2D" parent="Props" instance=ExtResource("6_t7bsi")]
+position = Vector2(-414, 205)
+
+[node name="box2" parent="Props" instance=ExtResource("7_j5ra6")]
+position = Vector2(-448, 198)
+
+[node name="House1" parent="Props" instance=ExtResource("8_fgpea")]
+position = Vector2(-196, 244)
+
+[node name="House2" parent="Props" instance=ExtResource("9_uvl6b")]
+position = Vector2(-55, 257)
+
+[node name="house3" parent="Props" instance=ExtResource("10_g8dwv")]
+position = Vector2(938, -134)
 
 [node name="Boss_Lair_Entrance2" parent="." instance=ExtResource("9_54knd")]
 position = Vector2(2335, -349)
@@ -360,9 +336,12 @@ entrance_texture = ExtResource("10_2mp5n")
 area_scene = ExtResource("11_d3y56")
 
 [node name="Boss_Lair_Entrance" parent="." instance=ExtResource("9_54knd")]
-position = Vector2(-510, 241)
+position = Vector2(215, 265)
 entrance_texture = ExtResource("12_apsjw")
 area_scene = ExtResource("13_b8kot")
+
+[node name="player_map" parent="." instance=ExtResource("14_dut3a")]
+position = Vector2(-553, 270)
 
 [connection signal="body_entered" from="Boss_Lair_Entrance" to="Boss_Lair_Entrance2" method="_on_boss_lair_entrance_body_entered"]
 [connection signal="body_entered" from="Boss_Lair_Entrance" to="Boss_Lair_Entrance" method="_on_body_entered"]
