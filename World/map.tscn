@@ -405,7 +405,7 @@ position = Vector2(1619, -36)
 position = Vector2(275, -136)
 
 [node name="box4" parent="Props" instance=ExtResource("7_j5ra6")]
-position = Vector2(587, -227)
+position = Vector2(588, -218)
 
 [node name="StaticBody2D2" parent="Props" instance=ExtResource("12_txuv6")]
 position = Vector2(696, -273)
@@ -504,10 +504,7 @@ position = Vector2(159, 213)
 position = Vector2(-129, 239)
 
 [node name="statue_head4" parent="Props" instance=ExtResource("22_6k5hr")]
-position = Vector2(510, -188)
-
-[node name="statue_head5" parent="Props" instance=ExtResource("22_6k5hr")]
-position = Vector2(1196, 23)
+position = Vector2(525, -198)
 
 [node name="Sprite2D" type="Sprite2D" parent="Props"]
 position = Vector2(2307, -98)
@@ -687,7 +684,7 @@ entrance_texture = ExtResource("12_apsjw")
 area_scene = ExtResource("13_b8kot")
 
 [node name="player_map" parent="." instance=ExtResource("14_dut3a")]
-position = Vector2(-546, 276)
+position = Vector2(-542, 288)
 
 [node name="Camera2D" type="Camera2D" parent="player_map"]
 zoom = Vector2(4, 4)
