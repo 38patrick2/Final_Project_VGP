@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c14rlvlelvdsq"]
+
+[ext_resource type="Texture2D" uid="uid://b70g34fki8pvr" path="res://Assets/Objects_separately/Oval_rock1_grass_shadow.png" id="1_6fapc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0baux"]
+radius = 16.0118
+height = 66.7034
+
+[node name="roeck_2" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6fapc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+rotation = -1.26885
+shape = SubResource("CapsuleShape2D_0baux")

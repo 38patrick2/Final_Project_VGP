@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvdh7wc54w0ud"]
+
+[ext_resource type="Texture2D" uid="uid://cikop0s8nmjyw" path="res://Assets/Objects_separately/Rock_statue_fox_grass_shadow.png" id="1_hdbxo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0txn"]
+radius = 13.0
+height = 32.0
+
+[node name="statue_fox" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hdbxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_q0txn")

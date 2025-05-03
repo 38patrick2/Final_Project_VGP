@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl3ehwyqa8oum"]
+
+[ext_resource type="Texture2D" uid="uid://jmfm766c6pkd" path="res://Assets/Objects_separately/Caury_pearl2_grass_shadow.png" id="1_g640v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_et5k8"]
+radius = 11.0
+
+[node name="shell2" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g640v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_et5k8")

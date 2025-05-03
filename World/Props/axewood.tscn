@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://5fjyeru4oerj"]
+
+[ext_resource type="Texture2D" uid="uid://bsusw0nsnegi0" path="res://Assets/village-pixel-tileset-top-down/2 Objects/3 Decor/6.png" id="1_7y2s5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o276a"]
+size = Vector2(12, 7)
+
+[node name="axewood" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7y2s5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_o276a")

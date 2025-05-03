@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmccrhjnqhm77"]
+
+[ext_resource type="Texture2D" uid="uid://cdu0i1b8p2rrm" path="res://Assets/Objects_separately/Fern_tree2.png" id="1_mjj8p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0p87"]
+radius = 4.0
+height = 10.0
+
+[node name="palm" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mjj8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 22)
+shape = SubResource("CapsuleShape2D_i0p87")
