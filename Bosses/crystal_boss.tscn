@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://dgexycpynnagw"]
+[gd_scene load_steps=27 format=3 uid="uid://dgexycpynnagw"]
 
 [ext_resource type="Script" uid="uid://cw4i8moxins1i" path="res://Bosses/crystal_boss.gd" id="1_3jw4c"]
-[ext_resource type="Texture2D" uid="uid://bobwty8kkx546" path="res://Assets/spr_monster_ice_hurt4.png" id="2_oo4th"]
-[ext_resource type="Texture2D" uid="uid://djwdjb0oul1cq" path="res://Assets/spr_monster_ice7.png" id="3_cncay"]
+[ext_resource type="Texture2D" uid="uid://38ysuo2bp8ct" path="res://Assets/spr_monster_ice_hurt4.png" id="2_oo4th"]
+[ext_resource type="Texture2D" uid="uid://bwuwp3v80pxc6" path="res://Assets/spr_monster_ice7.png" id="3_cncay"]
+[ext_resource type="AudioStream" uid="uid://07e168qpc2gt" path="res://Assets/retro-8bit-happy-adventure-videogame-music-246639.mp3" id="4_sqrfq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aedbi"]
 atlas = ExtResource("2_oo4th")
@@ -103,7 +104,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xilhe")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -164,6 +165,10 @@ animations = [{
 radius = 37.0
 height = 86.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qqwgp"]
+radius = 34.0
+height = 92.0
+
 [node name="CrystalBoss" type="CharacterBody2D"]
 collision_layer = 5
 collision_mask = 5
@@ -173,9 +178,7 @@ script = ExtResource("1_3jw4c")
 position = Vector2(903, 115)
 scale = Vector2(2.39063, 2.17188)
 sprite_frames = SubResource("SpriteFrames_xqo1s")
-animation = &"spin"
-frame = 2
-frame_progress = 0.297886
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(898, 115)
@@ -194,6 +197,16 @@ wait_time = 2.5
 one_shot = true
 autostart = true
 
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(897, 117)
+shape = SubResource("CapsuleShape2D_qqwgp")
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sqrfq")
+
 [connection signal="timeout" from="bullet_timer" to="." method="_on_bullet_timer_timeout"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="pause_timer" to="." method="_on_pause_timer_timeout"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]

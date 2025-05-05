@@ -1,14 +1,20 @@
 extends Control
 
-var continue_scene: String
-var continue_spawn: Vector2
+@onready var continue_btn: Button = $Button
+var continue_scene: String = ""
+var continue_spawn: Vector2 = Vector2.ZERO
 
-func setup(scene_path: String, spawn_point: Vector2) -> void:
+func _ready() -> void:
+	continue_btn.focus_mode = Control.FOCUS_NONE
+	print("VictoryPopup ready, visible =", visible)
+
+func setup(scene_path: String) -> void:
+	print("VictoryPopup.setup() reached")
 	continue_scene = scene_path
-	continue_spawn = spawn_point
-	visible = true
-
-
+	show()
+	continue_btn.grab_focus()
+	print("VictoryPopup now visible =", visible)
+	
 func _on_button_pressed() -> void:
 	GameState.next_scene = continue_scene
 	GameState.spawn_position = continue_spawn
