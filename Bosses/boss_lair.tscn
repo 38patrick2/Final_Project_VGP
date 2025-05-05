@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://cbmw0raaa1hus"]
 
-[ext_resource type="Texture2D" uid="uid://c80q3vqwnsyks" path="res://Assets/ae3da1a24b609e1acfda0a2afe5ae0ca.jpg" id="1_3eghi"]
-[ext_resource type="Texture2D" uid="uid://n8bodfqrat6l" path="res://Assets/Mossy Assets/Mossy - FloatingPlatforms.png" id="2_yhi68"]
-[ext_resource type="Texture2D" uid="uid://ljr6xxaesab3" path="res://Assets/Mossy - FloatingPlatforms.png" id="3_pwcho"]
+[ext_resource type="Texture2D" uid="uid://c2dlmkvb33sp2" path="res://Assets/ae3da1a24b609e1acfda0a2afe5ae0ca.jpg" id="1_3eghi"]
+[ext_resource type="Texture2D" uid="uid://d0jdtaila2m2h" path="res://Assets/Mossy Assets/Mossy - FloatingPlatforms.png" id="2_yhi68"]
+[ext_resource type="Texture2D" uid="uid://dt53pptpynt78" path="res://Assets/Mossy - FloatingPlatforms.png" id="3_pwcho"]
 [ext_resource type="PackedScene" uid="uid://qybxtn4xfo3i" path="res://Player/player.tscn" id="4_7f373"]
 [ext_resource type="PackedScene" uid="uid://dgexycpynnagw" path="res://Bosses/crystal_boss.tscn" id="5_5a2x1"]
-[ext_resource type="PackedScene" uid="uid://dcwx60itj4fib" path="res://UI/victory_popup.tscn" id="6_bmyxt"]
+[ext_resource type="PackedScene" uid="uid://dcwx60itj4fib" path="res://UI/VictoryPopup.tscn" id="6_bmyxt"]
 [ext_resource type="PackedScene" uid="uid://egklbwcvth6" path="res://UI/DeathPopup.tscn" id="7_m8tba"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3dqy"]
@@ -50,6 +50,9 @@ texture = ExtResource("1_3eghi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="VictoryPopup" parent="CanvasLayer" instance=ExtResource("6_bmyxt")]
+visible = false
+
 [node name="DeathPopup" parent="CanvasLayer" instance=ExtResource("7_m8tba")]
 visible = false
 anchors_preset = 0
@@ -79,12 +82,6 @@ grow_vertical = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_m3dqy")
 value = 100.0
 show_percentage = false
-
-[node name="VictoryPopup" parent="CanvasLayer" instance=ExtResource("6_bmyxt")]
-offset_left = -40.0
-offset_top = 4.0
-offset_right = 0.0
-offset_bottom = 44.0
 
 [node name="Platform" type="StaticBody2D" parent="."]
 collision_layer = 2
