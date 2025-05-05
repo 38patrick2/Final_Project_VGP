@@ -107,7 +107,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.take_damage(attack_damage)
 
 func _on_dash_timer_timeout() -> void:
-	_on_pause_timer_timeout()          # call your current handler
+	_on_pause_timer_timeout()         
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
 	_on_body_entered(body) 

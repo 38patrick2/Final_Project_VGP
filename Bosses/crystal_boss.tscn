@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cw4i8moxins1i" path="res://Bosses/crystal_boss.gd" id="1_3jw4c"]
 [ext_resource type="Texture2D" uid="uid://38ysuo2bp8ct" path="res://Assets/spr_monster_ice_hurt4.png" id="2_oo4th"]
 [ext_resource type="Texture2D" uid="uid://bwuwp3v80pxc6" path="res://Assets/spr_monster_ice7.png" id="3_cncay"]
-[ext_resource type="AudioStream" uid="uid://07e168qpc2gt" path="res://Assets/retro-8bit-happy-adventure-videogame-music-246639.mp3" id="4_sqrfq"]
+[ext_resource type="AudioStream" uid="uid://cwv3ejm6ydvxu" path="res://Assets/8-bit-chiptune-action-music-for-video-games-329940.mp3" id="4_sqrfq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aedbi"]
 atlas = ExtResource("2_oo4th")

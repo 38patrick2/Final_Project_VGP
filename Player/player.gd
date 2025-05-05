@@ -8,7 +8,7 @@ const ROLL_COOLDOWN := 4.0
 @export var roll_speed := 350
 
 var is_hurting: bool = false
-var is_dead: bool = false                   # ADDED: track death state
+var is_dead: bool = false                
 
 @export var gravity := 500
 @onready var bullet_scene = preload("res://Player/bullet.tscn")
@@ -42,11 +42,11 @@ func _ready():
 	dodge_cd_timer.one_shot = true
 
 func _physics_process(delta: float) -> void:
-	if is_dead:                              # ADDED: handle death float and skip normal movement
-		velocity.x = 0                       # ADDED
-		velocity.y += gravity * delta        # ADDED
-		move_and_slide()                     # ADDED
-		return                               # ADDED
+	if is_dead:                              
+		velocity.x = 0                       
+		velocity.y += gravity * delta        
+		move_and_slide()                     
+		return                              
 
 	var input_dir := 0
 	if not is_dodging:
@@ -129,7 +129,7 @@ func update_health_bar():
 	health_bar.value = current_health
 
 func take_damage(amount):
-	if is_dead or is_attacking or is_dodging:  # MODIFIED: also ignore if already dead
+	if is_dead or is_attacking or is_dodging: 
 		return
 
 	is_hurting = true
@@ -142,16 +142,16 @@ func take_damage(amount):
 		die()
 
 func die():
-	if is_dead:                               # ADDED: prevent re-entry
+	if is_dead:                             
 		return
-	is_dead = true                            # ADDED: mark dead
+	is_dead = true                            
 
 	$AnimatedSprite2D.play("death")
 	await $AnimatedSprite2D.animation_finished
 
-	var frame_count = $AnimatedSprite2D.sprite_frames.get_frame_count("death")   # FIXED: use sprite_frames
-	$AnimatedSprite2D.stop()                                         # ADDED: stop playing
-	$AnimatedSprite2D.frame = frame_count - 1                                   # ADDED: lock final frame
+	var frame_count = $AnimatedSprite2D.sprite_frames.get_frame_count("death")  
+	$AnimatedSprite2D.stop()                                       
+	$AnimatedSprite2D.frame = frame_count - 1                                  
 
 	var popup = get_tree().get_current_scene().get_node("CanvasLayer/DeathPopup")
 	var scene_path : String = get_tree().current_scene.scene_file_path
