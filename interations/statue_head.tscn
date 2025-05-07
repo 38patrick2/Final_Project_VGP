@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dadapnltst8q3"]
+[gd_scene load_steps=5 format=3 uid="uid://dadapnltst8q3"]
 
 [ext_resource type="Texture2D" uid="uid://de04cr833ippa" path="res://Assets/Objects_separately/Rock_statue_head_grass_shadow.png" id="1_aj0ds"]
+[ext_resource type="PackedScene" uid="uid://s7r0esrireo2" path="res://interations/interation_area/interaction_area.tscn" id="2_pmn8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvbn1"]
 radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nllba"]
+radius = 67.0
 
 [node name="statue_head" type="StaticBody2D"]
 y_sort_enabled = true
@@ -14,3 +18,9 @@ texture = ExtResource("1_aj0ds")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_lvbn1")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_pmn8p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_nllba")

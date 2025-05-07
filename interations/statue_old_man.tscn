@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://oq0kbhbyj4g7"]
+[gd_scene load_steps=6 format=3 uid="uid://oq0kbhbyj4g7"]
 
 [ext_resource type="Texture2D" uid="uid://0gw618at84gp" path="res://Assets/Objects_separately/Rock_statue_old_man_grass_shadow.png" id="1_j48l4"]
+[ext_resource type="PackedScene" uid="uid://s7r0esrireo2" path="res://interations/interation_area/interaction_area.tscn" id="2_k6o8j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0cr0r"]
 radius = 13.0
@@ -8,6 +9,9 @@ height = 60.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hplvy"]
 size = Vector2(45, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0mg2"]
+radius = 64.0
 
 [node name="statue_old_man" type="StaticBody2D"]
 y_sort_enabled = true
@@ -22,3 +26,9 @@ shape = SubResource("CapsuleShape2D_0cr0r")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 26)
 shape = SubResource("RectangleShape2D_hplvy")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_k6o8j")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(1, 21)
+shape = SubResource("CircleShape2D_n0mg2")
