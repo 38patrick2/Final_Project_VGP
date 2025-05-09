@@ -8,7 +8,7 @@ radius = 16.0
 height = 50.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvi8q"]
-radius = 65.7647
+radius = 39.0
 
 [node name="statue_deer" type="StaticBody2D"]
 

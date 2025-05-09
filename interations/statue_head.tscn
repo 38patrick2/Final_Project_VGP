@@ -7,7 +7,7 @@
 radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nllba"]
-radius = 67.0
+radius = 39.0128
 
 [node name="statue_head" type="StaticBody2D"]
 y_sort_enabled = true
@@ -22,5 +22,5 @@ shape = SubResource("CapsuleShape2D_lvbn1")
 [node name="InteractionArea" parent="." instance=ExtResource("2_pmn8p")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 14)
+position = Vector2(0, 19)
 shape = SubResource("CircleShape2D_nllba")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd6n5sj3a27wx"]
+
+[ext_resource type="Texture2D" uid="uid://3jq3n7hyi8or" path="res://Assets/Objects_separately/Oval_rock4_grass_shadow.png" id="1_o0wdy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ui81"]
+
+[node name="rock_3" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o0wdy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -1)
+rotation = -1.33343
+shape = SubResource("CapsuleShape2D_3ui81")

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcwx60itj4fib"]
+
+[ext_resource type="Texture2D" uid="uid://y7xyenpud2gw" path="res://Assets/start-screen/ChatGPT Image Apr 29, 2025, 12_47_45 PM.png" id="1_34liv"]
+[ext_resource type="Script" uid="uid://dgot7mke2evw4" path="res://UI/victory_popup.gd" id="1_42wpq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hslei"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_00ljs"]
+texture = ExtResource("1_34liv")
+expand_margin_left = 25.0
+expand_margin_top = 25.0
+expand_margin_right = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_218h5"]
+texture = ExtResource("1_34liv")
+
+[node name="VictoryPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = -167.0
+offset_right = 313.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_42wpq")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -153.0
+offset_right = 282.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hslei")
+theme_override_styles/hover = SubResource("StyleBoxTexture_00ljs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_218h5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_218h5")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
