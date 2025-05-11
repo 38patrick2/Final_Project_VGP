@@ -26,7 +26,7 @@ var lair_center: Vector2
 var direction: Vector2 = Vector2.ZERO
 var is_moving: bool = false
 
-var health: int  = 100
+var health: int  = 10
 var can_take_damage: bool = true
 var is_dead: bool = false
 
@@ -142,19 +142,20 @@ func die() -> void:
 	is_dead = true
 	
 	$DamageArea.monitoring = false
-		
+	movement_timer.stop()
+	stop_attack()		
 	sprite.play("death")
+	await get_tree().process_frame
 	await sprite.animation_finished
-
 	var last = sprite.sprite_frames.get_frame_count("death") - 1
 	sprite.stop()
+	sprite.frame = last
 	
 
 	var scene_path = get_tree().current_scene.scene_file_path  
 	victory_popup.setup(scene_path)
 
-	queue_free()
-
+	hide()
 
 func _on_attack_timer_timeout() -> void:
 	if not player:

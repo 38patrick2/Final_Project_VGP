@@ -117,6 +117,16 @@ func shoot():
 
 func _on_attack_timer_timeout():
 	is_attacking = false
+	if is_on_floor():
+		if velocity.x == 0:
+			$AnimatedSprite2D.play("idle")
+		else:
+			$AnimatedSprite2D.play("run")
+	else:
+			if velocity.y < 0:
+				$AnimatedSprite2D.play("jump")
+			else:
+				$AnimatedSprite2D.play("fall")
 
 func start_roll() -> void:
 	is_dodging = true
