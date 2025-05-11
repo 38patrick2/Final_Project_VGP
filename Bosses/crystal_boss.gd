@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var attack_damage: int = 25
 
 var is_dead: bool = false
-var health: int = 10
+var health: int = 100
 var can_take_damage: bool = true
 var bullet_angle: float = 0.0
 
@@ -32,6 +32,7 @@ func _ready() -> void:
 	randomize()
 	pause_timer.start()
 	pause_timer.wait_time = pause_duration
+
 	sprite.play("spin")
 	bullet_timer.start()
 
@@ -47,8 +48,10 @@ func take_damage() -> void:
 		return
 	health -= 5
 	sprite.play("damage")
+	$DamageSFX.play()
 	health_bar.value = health
 	if health <= 0:
+		$DeathSFX.play()
 		die()
 
 func die() -> void:
@@ -61,9 +64,7 @@ func die() -> void:
 	$DamageArea.monitoring = false
 		
 	sprite.play("death")
-	print("▶ playing death")   
 	await sprite.animation_finished
-	print("✔ death finished")  
 
 	var last = sprite.sprite_frames.get_frame_count("death") - 1
 	sprite.stop()
@@ -83,6 +84,8 @@ func _on_bullet_timer_timeout() -> void:
 	bullet_angle += deg_to_rad(15)
 
 func _on_pause_timer_timeout() -> void:
+	$DashSFX.play()
+
 	var start_pos = global_position
 	var angle = randf() * TAU  
 	var dir   = Vector2(cos(angle), sin(angle)).normalized()
@@ -107,7 +110,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.take_damage(attack_damage)
 
 func _on_dash_timer_timeout() -> void:
-	_on_pause_timer_timeout()          # call your current handler
+	_on_pause_timer_timeout()         
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
 	_on_body_entered(body) 

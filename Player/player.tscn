@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://qybxtn4xfo3i"]
+[gd_scene load_steps=53 format=3 uid="uid://qybxtn4xfo3i"]
 
 [ext_resource type="Script" uid="uid://syamthef6stf" path="res://Player/player.gd" id="1_50ms3"]
 [ext_resource type="Texture2D" uid="uid://c4yuuuuvax5y0" path="res://Assets/Little Mage/Attack/StaffMighty/AttackMighty1.png" id="1_cakfj"]
@@ -45,6 +45,10 @@
 [ext_resource type="Texture2D" uid="uid://ccde5v5jqcw2f" path="res://Assets/Little Mage/Run/Run4.png" id="28_xvuvw"]
 [ext_resource type="Texture2D" uid="uid://dslg08sxxqnj3" path="res://Assets/Little Mage/Run/Run5.png" id="29_ybw74"]
 [ext_resource type="Texture2D" uid="uid://mt62pufyorcn" path="res://Assets/Little Mage/Run/Run6.png" id="30_abl1s"]
+[ext_resource type="AudioStream" uid="uid://m6emfrtxg4va" path="res://Assets/firework-cluster-90480.mp3" id="46_6rl0i"]
+[ext_resource type="AudioStream" uid="uid://dkc37jrd3n6jc" path="res://Assets/mixkit-falling-hit-on-gravel-756.wav" id="47_7x5p2"]
+[ext_resource type="AudioStream" uid="uid://cmdl0ab8t42ea" path="res://Assets/mixkit-horror-lose-2028.wav" id="48_6eb1q"]
+[ext_resource type="AudioStream" uid="uid://vqeh3h37b3bx" path="res://Assets/whoosh-swift-cut-jam-fx-1-00-00.mp3" id="48_7x5p2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nebuq"]
 animations = [{
@@ -67,7 +71,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_fmue0")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 8.0
 }, {
@@ -112,7 +116,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dodge",
-"speed": 8.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -241,7 +245,7 @@ speed = 250
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4.3125, 4.51562)
 sprite_frames = SubResource("SpriteFrames_nebuq")
-animation = &"hit"
+animation = &"dodge"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
@@ -262,5 +266,20 @@ show_percentage = false
 position = Vector2(76, -7)
 
 [node name="DodgeTimer" type="Timer" parent="."]
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("46_6rl0i")
+
+[node name="HitSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_7x5p2")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("48_6eb1q")
+volume_db = 2.476
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("48_7x5p2")
+volume_db = 3.699
+max_distance = 4096.0
 
 [connection signal="timeout" from="DodgeTimer" to="." method="_on_dodge_timer_timeout"]
