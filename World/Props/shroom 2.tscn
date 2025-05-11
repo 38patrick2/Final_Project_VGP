@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8hmir25excnh"]
+
+[ext_resource type="Texture2D" uid="uid://jysqrafe0trm" path="res://Assets/Objects_separately/Orange_mushrooms1_grass_shadow.png" id="1_1x671"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vi1nq"]
+radius = 7.0
+
+[node name="shroom" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1x671")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_vi1nq")

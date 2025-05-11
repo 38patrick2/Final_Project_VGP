@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://uhr4354e1sht"]
+
+[ext_resource type="Texture2D" uid="uid://bhu6lviwy2yhr" path="res://Assets/village-pixel-tileset-top-down/2 Objects/6 Tent/3.png" id="1_54ktn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh2li"]
+size = Vector2(60, 27)
+
+[node name="tent_3" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_54ktn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17.5)
+shape = SubResource("RectangleShape2D_gh2li")

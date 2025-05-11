@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjm4a4e03csy0"]
+
+[ext_resource type="Texture2D" uid="uid://8otb1dy0oyll" path="res://Assets/Objects_separately/Caury_white1_grass_shadow.png" id="1_3nv2d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vw0uk"]
+radius = 8.60232
+height = 49.3962
+
+[node name="shell3" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3nv2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 11)
+rotation = -1.14145
+shape = SubResource("CapsuleShape2D_vw0uk")

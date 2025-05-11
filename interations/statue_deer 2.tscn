@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddoi6ewyok2s6"]
+
+[ext_resource type="Texture2D" uid="uid://dy6q0up303aki" path="res://Assets/Objects_separately/Rock_statue_deer_grass_shadow.png" id="1_gekaf"]
+[ext_resource type="Script" path="res://interations/statue_deer_2.gd" id="1_ocrkh"]
+[ext_resource type="PackedScene" uid="uid://s7r0esrireo2" path="res://interations/interation_area/interaction_area.tscn" id="2_3r8t3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bm3o1"]
+radius = 16.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvi8q"]
+radius = 65.7647
+
+[node name="statue_deer" type="StaticBody2D"]
+script = ExtResource("1_ocrkh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gekaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 30)
+shape = SubResource("CapsuleShape2D_bm3o1")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_3r8t3")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1, 50)
+shape = SubResource("CircleShape2D_bvi8q")

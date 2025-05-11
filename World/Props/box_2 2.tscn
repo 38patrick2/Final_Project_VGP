@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkxh7uymjl10w"]
+
+[ext_resource type="Texture2D" uid="uid://bhwkueexu7aui" path="res://Assets/village-pixel-tileset-top-down/2 Objects/4 Box/5.png" id="1_chpkd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf7j3"]
+size = Vector2(12.5198, 12.0353)
+
+[node name="Box2" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_chpkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.29223, 4.57961)
+rotation = -0.459022
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bf7j3")

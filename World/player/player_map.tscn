@@ -66,7 +66,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_rn063"]
 radius = 6.0
 
-[node name="player_map" type="CharacterBody2D"]
+[node name="player_map" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 wall_min_slide_angle = 0.174533
 script = ExtResource("1_mqjk2")
