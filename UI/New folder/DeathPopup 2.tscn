@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt4he7lrs6t6q"]
+
+[ext_resource type="Script" uid="uid://dpf8jqgll4jd7" path="res://UI/death_popup.gd" id="1_edd6o"]
+[ext_resource type="Texture2D" uid="uid://cb8hjn2s52oq4" path="res://Assets/start-screen/ChatGPT Image Apr 29, 2025, 11_47_25 AM.png" id="3_kc36c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rimjd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l12kn"]
+texture = ExtResource("3_kc36c")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edrae"]
+texture = ExtResource("3_kc36c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6f5p3"]
+texture = ExtResource("3_kc36c")
+
+[node name="DeathPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -210.0
+offset_right = 340.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_edd6o")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.5
+offset_top = -139.5
+offset_right = 194.5
+offset_bottom = 139.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rimjd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l12kn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_edrae")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6f5p3")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

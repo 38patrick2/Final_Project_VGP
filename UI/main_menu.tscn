@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv2ot053wx3cb"]
+[gd_scene load_steps=14 format=3 uid="uid://bv2ot053wx3cb"]
 
 [ext_resource type="Script" uid="uid://cis1ax02k6avx" path="res://UI/main_menu.gd" id="1_f40uw"]
 [ext_resource type="Texture2D" uid="uid://boikf58eri2nc" path="res://Assets/start-screen/made-a-main-menu-background-v0-tocu0xmhmeca1.webp" id="1_t2kdi"]
 [ext_resource type="Texture2D" uid="uid://dus5u2gg75w1k" path="res://Assets/start-screen/ChatGPT Image Apr 4, 2025, 03_32_05 PM.png" id="1_wooo0"]
 [ext_resource type="Texture2D" uid="uid://coii6hqn1nl17" path="res://Assets/start-screen/ChatGPT Image Apr 4, 2025, 03_25_07 PM.png" id="2_o0iq2"]
 [ext_resource type="Texture2D" uid="uid://dcltah8wolrwo" path="res://Assets/start-screen/ChatGPT Image Apr 4, 2025, 03_34_01 PM.png" id="4_mxyf0"]
+[ext_resource type="AudioStream" uid="uid://dj3oq5edfr6kj" path="res://Assets/pixel-bubbles-287284.mp3" id="6_8ctay"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_po15d"]
 texture = ExtResource("1_t2kdi")
@@ -97,6 +98,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ohr3r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_11pfk")
 
 [node name="StartMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8ctay")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_startbutton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Exitbutton_2_pressed"]

@@ -1,3 +1,6 @@
 extends Node
-var next_scene: String = ""
-var spawn_position: Vector2 = Vector2.ZERO
+
+var return_position = null
+var boss_lair_scene = ""
+
+const MAP_SCENE = "res://World/map.tscn"

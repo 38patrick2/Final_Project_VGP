@@ -7,6 +7,7 @@ var continue_spawn: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	continue_btn.focus_mode = Control.FOCUS_NONE
 	print("VictoryPopup ready, visible =", visible)
+	$Button.pressed.connect(_on_button_pressed)
 
 func setup(scene_path: String) -> void:
 	print("VictoryPopup.setup() reached")
@@ -16,6 +17,4 @@ func setup(scene_path: String) -> void:
 	print("VictoryPopup now visible =", visible)
 	
 func _on_button_pressed() -> void:
-	GameState.next_scene = continue_scene
-	GameState.spawn_position = continue_spawn
-	get_tree().change_scene_to_file(continue_scene)
+	get_tree().change_scene_to_file(GameState.MAP_SCENE)

@@ -4,6 +4,7 @@ extends Area2D
 @export var area_scene: PackedScene
 var player_in_range := false
 @onready var sprite = $Sprite2D
+@export var boss_scene: String 
 
 func _ready():
 	if entrance_texture:
