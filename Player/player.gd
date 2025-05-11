@@ -79,27 +79,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _update_animation(input_dir: int) -> void:
-	if is_dodging:
-		$Dash.play()
-		$AnimatedSprite2D.play("dodge")
-		return
-
-	if is_attacking:
-		return
-	
-	if is_hurting:
-		return
-
 	var anim = $AnimatedSprite2D
-	if not is_on_floor():
+	var target_anim: String = ""
+
+	if is_dodging:
+		target_anim = "dodge"
+	elif is_attacking:
+		return  
+	elif is_hurting:
+		return   
+	elif not is_on_floor():
 		if velocity.y < 0:
-			anim.play("jump")
+			target_anim = "jump"
 		else:
-			anim.play("fall")
-	elif input_dir == 0:
-		anim.play("idle")
+			target_anim = "fall"
 	else:
-		anim.play("run")
+		if input_dir == 0:
+			target_anim = "idle"
+		else:
+			target_anim = "run"
+	if anim.animation != target_anim:
+		anim.play(target_anim)
 
 func shoot():
 	if is_attacking or is_dodging:

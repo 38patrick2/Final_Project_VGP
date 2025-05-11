@@ -74,7 +74,7 @@ script = ExtResource("1_mqjk2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.572)
 sprite_frames = SubResource("SpriteFrames_pspyd")
-animation = &"run"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
