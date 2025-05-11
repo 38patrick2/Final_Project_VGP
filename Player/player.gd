@@ -1,29 +1,29 @@
 extends CharacterBody2D
 
-@export var speed := 200
-@export var jump_velocity := -450
+@export var speed = 200
+@export var jump_velocity = -450
 
-const ROLL_DURATION := 0.45
-const ROLL_COOLDOWN := 4.0
-@export var roll_speed := 350
+const ROLL_DURATION = 0.45
+const ROLL_COOLDOWN = 2.5
+@export var roll_speed = 350
 
 var is_hurting: bool = false
 var is_dead: bool = false                
 
-@export var gravity := 500
+@export var gravity = 500
 @onready var bullet_scene = preload("res://Player/bullet.tscn")
 var is_attacking : bool = false
-@onready var attack_timer := Timer.new()
-@onready var health_bar := $PlayerUI/HealthBar
+@onready var attack_timer = Timer.new()
+@onready var health_bar = $PlayerUI/HealthBar
 
-@onready var dodge_timer := Timer.new()
-@onready var dodge_cd_timer := Timer.new()
+@onready var dodge_timer = Timer.new()
+@onready var dodge_cd_timer = Timer.new()
 
 var is_dodging : bool = false
 var roll_dir : int = 0
 
-var max_health := 100
-var current_health := 100
+var max_health = 100
+var current_health = 100
 
 func _ready():
 	$AnimatedSprite2D.animation_finished.connect(_on_anim_finished)
@@ -72,6 +72,7 @@ func _physics_process(delta: float) -> void:
 		shoot()
 
 	if Input.is_action_just_pressed("ui_dodge") and not is_dodging and dodge_cd_timer.is_stopped():
+		$Dash.play()
 		start_roll()
 
 	_update_animation(input_dir)
@@ -79,6 +80,7 @@ func _physics_process(delta: float) -> void:
 
 func _update_animation(input_dir: int) -> void:
 	if is_dodging:
+		$Dash.play()
 		$AnimatedSprite2D.play("dodge")
 		return
 
@@ -103,6 +105,7 @@ func shoot():
 	if is_attacking or is_dodging:
 		return
 	is_attacking = true
+	$AttackSFX.play()
 	$AnimatedSprite2D.play("attack")
 	attack_timer.start()
 
@@ -134,6 +137,7 @@ func take_damage(amount):
 
 	is_hurting = true
 	$AnimatedSprite2D.play("hit")
+	$HitSFX.play()
 	current_health -= amount
 	current_health = clamp(current_health, 0, max_health)
 	update_health_bar()
@@ -144,8 +148,8 @@ func take_damage(amount):
 func die():
 	if is_dead:                             
 		return
-	is_dead = true                            
-
+	is_dead = true
+	$Death.play()
 	$AnimatedSprite2D.play("death")
 	await $AnimatedSprite2D.animation_finished
 

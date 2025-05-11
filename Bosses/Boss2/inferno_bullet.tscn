@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4soyuu1cvm4u"]
+
+[ext_resource type="Script" uid="uid://le0ji0itdw4x" path="res://Bosses/Boss2/inferno_bullet.gd" id="1_cctfm"]
+[ext_resource type="Texture2D" uid="uid://rss17x6rvno4" path="res://Assets/ChatGPT Image May 11, 2025, 10_36_19 AM.png" id="2_cctfm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kywm3"]
+radius = 19.0263
+
+[node name="InfernoBullet" type="Area2D"]
+position = Vector2(50, 79)
+script = ExtResource("1_cctfm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.375, -3.125)
+scale = Vector2(0.0476074, 0.0490723)
+texture = ExtResource("2_cctfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -1)
+shape = SubResource("CircleShape2D_kywm3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
