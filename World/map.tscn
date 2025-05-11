@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b53kuwpw1yvn3"]
+[gd_scene load_steps=55 format=3 uid="uid://b53kuwpw1yvn3"]
 
 [ext_resource type="Script" uid="uid://dd3v87s57jtpc" path="res://World/map.gd" id="1_mc6uo"]
 [ext_resource type="Texture2D" uid="uid://dwo81rti3jmpc" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://y3iad2v5m1b2" path="res://Assets/village-pixel-tileset-top-down/2 Objects/3 Decor/16.png" id="42_gkaqu"]
 [ext_resource type="Script" uid="uid://d0tmrkvquc440" path="res://World/boss_lair_entrance1.gd" id="44_tw4yq"]
 [ext_resource type="Script" uid="uid://bh73mi2ea870b" path="res://World/boss_lair_entrance2.gd" id="45_mc6uo"]
+[ext_resource type="Script" uid="uid://nuecdp3dadg0" path="res://World/boss_lair_entrance3.gd" id="48_kg6h4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00kyn"]
 texture = ExtResource("1_vi3qm")
@@ -688,6 +689,9 @@ limit_left = -958
 limit_top = -484
 limit_right = 2518
 limit_bottom = 469
+
+[node name="Boss_Lair_Entrance3" parent="." instance=ExtResource("9_54knd")]
+script = ExtResource("48_kg6h4")
 
 [connection signal="body_entered" from="Boss_Lair_Entrance2" to="Boss_Lair_Entrance2" method="_on_body_entered"]
 [connection signal="body_exited" from="Boss_Lair_Entrance2" to="Boss_Lair_Entrance2" method="_on_body_exited"]

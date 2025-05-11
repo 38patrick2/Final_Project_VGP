@@ -137,6 +137,7 @@ func start_roll() -> void:
 func _on_dodge_timer_timeout() -> void:
 	is_dodging = false
 	velocity.x = 0
+	_update_animation(0)
 
 func update_health_bar():
 	health_bar.value = current_health
