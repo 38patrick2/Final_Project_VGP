@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bwloexiv75y3p" path="res://Assets/672024383b5750b286e1590a6a284907.jpg" id="3_bfgig"]
 [ext_resource type="PackedScene" uid="uid://egklbwcvth6" path="res://UI/DeathPopup.tscn" id="4_8be6u"]
 [ext_resource type="PackedScene" uid="uid://dcwx60itj4fib" path="res://UI/VictoryPopup.tscn" id="5_i1jeq"]
-[ext_resource type="Texture2D" uid="uid://dkdu7cdqfl70v" path="res://Assets/ChatGPT Image May 6, 2025, 10_37_03 AM.png" id="6_y70pf"]
-[ext_resource type="Texture2D" uid="uid://dpw748ao5wdls" path="res://Assets/ChatGPT Image May 6, 2025, 10_37_03 AM (2).png" id="7_4w158"]
+[ext_resource type="Texture2D" uid="uid://dkdu7cdqfl70v" path="res://Assets/3 AM.png" id="6_y70pf"]
+[ext_resource type="Texture2D" uid="uid://dpw748ao5wdls" path="res://Assets/M (2).png" id="7_4w158"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qiwdw"]
 bg_color = Color(0.880774, 0, 0.252583, 1)

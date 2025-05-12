@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4soyuu1cvm4u"]
 
 [ext_resource type="Script" uid="uid://le0ji0itdw4x" path="res://Bosses/Boss2/inferno_bullet.gd" id="1_cctfm"]
-[ext_resource type="Texture2D" uid="uid://rss17x6rvno4" path="res://Assets/ChatGPT Image May 11, 2025, 10_36_19 AM.png" id="2_cctfm"]
+[ext_resource type="Texture2D" uid="uid://rss17x6rvno4" path="res://Assets/AM.png" id="2_cctfm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kywm3"]
 radius = 19.0263
