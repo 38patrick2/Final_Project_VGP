@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cco25n4x8lw8i" path="res://Bosses/Boss2/inferno_boss.tscn" id="2_qfwyd"]
 [ext_resource type="Texture2D" uid="uid://bwloexiv75y3p" path="res://Assets/672024383b5750b286e1590a6a284907.jpg" id="3_bfgig"]
 [ext_resource type="PackedScene" uid="uid://egklbwcvth6" path="res://UI/DeathPopup.tscn" id="4_8be6u"]
-[ext_resource type="PackedScene" uid="uid://dcwx60itj4fib" path="res://UI/VictoryPopup.tscn" id="5_i1jeq"]
+[ext_resource type="PackedScene" uid="uid://lad34otkx7lx" path="res://UI/end_screen.tscn" id="6_oh368"]
 [ext_resource type="Texture2D" uid="uid://dkdu7cdqfl70v" path="res://Assets/3 AM.png" id="6_y70pf"]
 [ext_resource type="Texture2D" uid="uid://dpw748ao5wdls" path="res://Assets/M (2).png" id="7_4w158"]
 
@@ -79,12 +79,8 @@ value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="VictoryPopup" parent="CanvasLayer" instance=ExtResource("5_i1jeq")]
+[node name="end_screen" parent="CanvasLayer" instance=ExtResource("6_oh368")]
 visible = false
-offset_left = -40.0
-offset_top = 4.0
-offset_right = 0.0
-offset_bottom = 44.0
 
 [node name="Platform" type="StaticBody2D" parent="."]
 collision_layer = 2

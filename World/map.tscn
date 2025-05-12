@@ -681,7 +681,7 @@ position = Vector2(364, 370)
 script = ExtResource("45_mc6uo")
 
 [node name="player_map" parent="." instance=ExtResource("14_dut3a")]
-position = Vector2(1111, 55)
+position = Vector2(-562, 262)
 
 [node name="Camera2D" type="Camera2D" parent="player_map"]
 position = Vector2(5, 3)

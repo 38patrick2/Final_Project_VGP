@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://cco25n4x8lw8i"]
+[gd_scene load_steps=84 format=3 uid="uid://cco25n4x8lw8i"]
 
 [ext_resource type="Script" uid="uid://d4f60rqw7qasm" path="res://Bosses/Boss2/inferno_boss.gd" id="1_hgdbn"]
 [ext_resource type="Texture2D" uid="uid://b2wiepuca52jx" path="res://Assets/Necromancer_creativekind-Sheet.png" id="2_8c73a"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b5nn848q2bylw" path="res://Assets/pixel-sound-effect-3-82880.mp3" id="4_qloap"]
 [ext_resource type="AudioStream" uid="uid://c054dcud206c8" path="res://Assets/beam-fire-282361.mp3" id="5_h2jxd"]
 [ext_resource type="AudioStream" uid="uid://dlo0pxhcrnb6w" path="res://Assets/very-infectious-laughter-117727.mp3" id="6_lrjln"]
+[ext_resource type="AudioStream" uid="uid://b65suml4rnlrv" path="res://Assets/happy-end-192233.mp3" id="7_uin1h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qloap"]
 atlas = ExtResource("2_8c73a")
@@ -614,6 +615,10 @@ volume_db = -4.952
 [node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_lrjln")
 volume_db = 11.143
+
+[node name="EndMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_uin1h")
+volume_db = 3.714
 
 [connection signal="timeout" from="movement_timer" to="." method="_on_movement_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
