@@ -1,30 +1,27 @@
-extends CharacterBody2D
+extends Area2D
 
-@export var speed := 130
-var direction := Vector2.ZERO
+@export var boss_scene: String = "res://Bosses/Boss3/sea_lair.tscn"
 
-@onready var sprite := $AnimatedSprite2D
+var _player_in_area: bool = false
 
-func _physics_process(delta):
-	direction = Vector2.ZERO
+func _ready():
+	if not is_connected("body_entered", Callable(self, "_on_body_entered")):
+		connect("body_entered", Callable(self, "_on_body_entered"))
+		connect("body_exited",  Callable(self, "_on_body_exited"))
 
-	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("move_right"):
-		direction.x += 1
-	if Input.is_action_pressed("move_up"):
-		direction.y -= 1
-	if Input.is_action_pressed("move_down"):
-		direction.y += 1
+func _process(delta):
+	if _player_in_area and Input.is_action_just_pressed("ui_interact"):
+		print("Loading boss scene:", boss_scene)
+		GameState.return_position = global_position
+		GameState.boss_lair_scene  = boss_scene
+		get_tree().change_scene_to_file(boss_scene) 
 
-	if direction != Vector2.ZERO:
-		direction = direction.normalized()
-		velocity = direction * speed
-		move_and_slide()
-
-		sprite.play("run")
-		if direction.x != 0:
-			sprite.flip_h = direction.x < 0
-	else:
-		velocity = Vector2.ZERO
-		sprite.play("idle")
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		_player_in_area = true
+		print("Player entered boss-lair entrance")
+		
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		_player_in_area = false
+		print("Player left boss-lair entrance")

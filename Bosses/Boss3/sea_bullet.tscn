@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfqwoc3bkn2px"]
+
+[ext_resource type="Script" uid="uid://dcfn1wqsiy3wc" path="res://Bosses/Boss3/sea_bullet.gd" id="1_te41h"]
+[ext_resource type="Texture2D" uid="uid://xjhlg4sv176k" path="res://Assets/bubble.png" id="2_5toex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kywm3"]
+radius = 19.0263
+
+[node name="SeaBullet" type="Area2D"]
+script = ExtResource("1_te41h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.84774e-06, 0.499997)
+scale = Vector2(0.0566406, 0.0576172)
+texture = ExtResource("2_5toex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kywm3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

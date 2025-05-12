@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dd6bxxgunk05d"]
+[gd_scene load_steps=51 format=3 uid="uid://dd6bxxgunk05d"]
 
 [ext_resource type="Texture2D" uid="uid://dwo81rti3jmpc" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
 [ext_resource type="Texture2D" uid="uid://bs78iub0oi8jd" path="res://Assets/Env/survivalgame-terrian-defult.png" id="2_n4ymy"]
@@ -9,13 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b2ftroodjfqjo" path="res://World/boss_lair_entrance.tscn" id="9_54knd"]
 [ext_resource type="PackedScene" uid="uid://dadb4d6paftv8" path="res://World/Props/house_2.tscn" id="9_uvl6b"]
 [ext_resource type="PackedScene" uid="uid://5fjyeru4oerj" path="res://World/Props/axewood.tscn" id="9_xgus0"]
-[ext_resource type="Texture2D" uid="uid://b7ygps3fcg0dn" path="res://Assets/Objects_separately/Cave_entrance2_grass_shadow.png" id="10_2mp5n"]
 [ext_resource type="PackedScene" uid="uid://1i62cdvo4m2o" path="res://World/Props/house_3.tscn" id="10_g8dwv"]
-[ext_resource type="PackedScene" uid="uid://db5xc87ths5dj" path="res://World/Arenas/boss_2_arena.tscn" id="11_d3y56"]
-[ext_resource type="Texture2D" uid="uid://c7jn4topi2dub" path="res://Assets/Objects_separately/Cave_entrance1_grass_shadow.png" id="12_apsjw"]
 [ext_resource type="PackedScene" uid="uid://gbwmfdnwvapn" path="res://World/Props/house_4.tscn" id="12_txuv6"]
 [ext_resource type="Texture2D" uid="uid://hg0bkeqpnkbh" path="res://Assets/Env/survivalgame-terrian-water copy.png" id="13_5c4ir"]
-[ext_resource type="PackedScene" uid="uid://dlob2f0fc75f" path="res://World/Arenas/boss_1_arena.tscn" id="13_b8kot"]
 [ext_resource type="PackedScene" uid="uid://74rec0suacse" path="res://World/Props/anvil.tscn" id="13_njv00"]
 [ext_resource type="PackedScene" uid="uid://dkvl1k0pc1ilk" path="res://World/player/player_map.tscn" id="14_dut3a"]
 [ext_resource type="PackedScene" uid="uid://dujxi371ta58m" path="res://World/Props/woodpile_1.tscn" id="14_g4xt3"]
@@ -675,13 +671,9 @@ texture = ExtResource("42_gkaqu")
 [node name="Boss_Lair_Entrance2" parent="." instance=ExtResource("9_54knd")]
 position = Vector2(2324, -384)
 scale = Vector2(0.983339, 1.05883)
-entrance_texture = ExtResource("10_2mp5n")
-area_scene = ExtResource("11_d3y56")
 
 [node name="Boss_Lair_Entrance" parent="." instance=ExtResource("9_54knd")]
 position = Vector2(364, 370)
-entrance_texture = ExtResource("12_apsjw")
-area_scene = ExtResource("13_b8kot")
 
 [node name="player_map" parent="." instance=ExtResource("14_dut3a")]
 position = Vector2(-542, 288)

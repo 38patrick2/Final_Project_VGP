@@ -1,0 +1,170 @@
+[gd_scene load_steps=13 format=3 uid="uid://511mcymny6vp"]
+
+[ext_resource type="PackedScene" uid="uid://qybxtn4xfo3i" path="res://Player/player.tscn" id="1_71naf"]
+[ext_resource type="Script" uid="uid://djrad5fsfr3f7" path="res://Bosses/Boss3/enemy_spawn.gd" id="2_f5kf8"]
+[ext_resource type="Texture2D" uid="uid://dofmrjf5blw6p" path="res://Assets/previews-4.jpg" id="3_cyl88"]
+[ext_resource type="PackedScene" uid="uid://egklbwcvth6" path="res://UI/DeathPopup.tscn" id="4_r55pb"]
+[ext_resource type="PackedScene" uid="uid://dcwx60itj4fib" path="res://UI/VictoryPopup.tscn" id="5_465lh"]
+[ext_resource type="Texture2D" uid="uid://bo6qmy5gitgls" path="res://Assets/platform.png" id="6_4eup3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qiwdw"]
+bg_color = Color(0.880774, 0, 0.252583, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fj5p"]
+size = Vector2(192, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cvt1"]
+size = Vector2(303, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4hxd"]
+size = Vector2(1156.5, 75.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7pb3"]
+size = Vector2(84, 777)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stwkr"]
+size = Vector2(1212, 87.5)
+
+[node name="SeaLair" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_71naf")]
+position = Vector2(18, 458)
+
+[node name="EnemySpawn" type="Node2D" parent="."]
+position = Vector2(575.5, -60)
+script = ExtResource("2_f5kf8")
+
+[node name="Background" type="Sprite2D" parent="."]
+light_mask = 3
+z_index = -1
+position = Vector2(577, 346)
+scale = Vector2(1.01408, 1.05381)
+texture = ExtResource("3_cyl88")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DeathPopup" parent="CanvasLayer" instance=ExtResource("4_r55pb")]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 235.0
+offset_top = 147.0
+offset_right = 908.0
+offset_bottom = 561.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="BossHealthBarUI" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -314.0
+offset_right = 571.0
+offset_bottom = -279.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_qiwdw")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="VictoryPopup" parent="CanvasLayer" instance=ExtResource("5_465lh")]
+visible = false
+offset_left = -40.0
+offset_top = 4.0
+offset_right = 0.0
+offset_bottom = 44.0
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(0, -14)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(236, 441)
+shape = SubResource("RectangleShape2D_0fj5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+position = Vector2(240, 447)
+scale = Vector2(0.330078, 0.197198)
+texture = ExtResource("6_4eup3")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(0, -14)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(118, 274.5)
+shape = SubResource("RectangleShape2D_0fj5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3"]
+position = Vector2(121, 277)
+scale = Vector2(0.195638, 0.197198)
+texture = ExtResource("6_4eup3")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(0, -14)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+position = Vector2(1042, 287)
+shape = SubResource("RectangleShape2D_0fj5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4"]
+position = Vector2(1042, 294)
+scale = Vector2(0.195638, 0.197198)
+texture = ExtResource("6_4eup3")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(348, -14)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(569.5, 443)
+shape = SubResource("RectangleShape2D_1cvt1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
+position = Vector2(573, 445)
+scale = Vector2(0.313477, 0.200127)
+texture = ExtResource("6_4eup3")
+
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(576.75, 652.25)
+shape = SubResource("RectangleShape2D_p4hxd")
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+position = Vector2(581, 681)
+scale = Vector2(1.41895, 0.666688)
+texture = ExtResource("6_4eup3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-45, 376)
+shape = SubResource("RectangleShape2D_k7pb3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+light_mask = 3
+position = Vector2(1196, 360)
+shape = SubResource("RectangleShape2D_k7pb3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(380, -97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(226, 98.25)
+shape = SubResource("RectangleShape2D_stwkr")

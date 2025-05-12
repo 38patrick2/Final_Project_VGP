@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://b53kuwpw1yvn3"]
+[gd_scene load_steps=56 format=3 uid="uid://b53kuwpw1yvn3"]
 
 [ext_resource type="Script" uid="uid://dd3v87s57jtpc" path="res://World/map.gd" id="1_mc6uo"]
 [ext_resource type="Texture2D" uid="uid://dwo81rti3jmpc" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
@@ -48,6 +48,7 @@
 [ext_resource type="Script" uid="uid://d0tmrkvquc440" path="res://World/boss_lair_entrance1.gd" id="44_tw4yq"]
 [ext_resource type="Script" uid="uid://bh73mi2ea870b" path="res://World/boss_lair_entrance2.gd" id="45_mc6uo"]
 [ext_resource type="Script" uid="uid://nuecdp3dadg0" path="res://World/boss_lair_entrance3.gd" id="48_kg6h4"]
+[ext_resource type="AudioStream" uid="uid://lwr0j7f6ggen" path="res://Assets/popcorn-and-videogames-233568.mp3" id="49_5lse3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00kyn"]
 texture = ExtResource("1_vi3qm")
@@ -680,7 +681,7 @@ position = Vector2(364, 370)
 script = ExtResource("45_mc6uo")
 
 [node name="player_map" parent="." instance=ExtResource("14_dut3a")]
-position = Vector2(283, 384)
+position = Vector2(1111, 55)
 
 [node name="Camera2D" type="Camera2D" parent="player_map"]
 position = Vector2(5, 3)
@@ -691,7 +692,13 @@ limit_right = 2518
 limit_bottom = 469
 
 [node name="Boss_Lair_Entrance3" parent="." instance=ExtResource("9_54knd")]
+position = Vector2(1149, -1)
 script = ExtResource("48_kg6h4")
+
+[node name="MapSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("49_5lse3")
+volume_db = -10.0
+parameters/looping = false
 
 [connection signal="body_entered" from="Boss_Lair_Entrance2" to="Boss_Lair_Entrance2" method="_on_body_entered"]
 [connection signal="body_exited" from="Boss_Lair_Entrance2" to="Boss_Lair_Entrance2" method="_on_body_exited"]
