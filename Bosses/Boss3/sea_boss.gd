@@ -63,7 +63,7 @@ func take_damage() -> void:
 	if not can_take_damage or is_dead:
 		return
 
-	health -= 7
+	health -= 10
 	sprite.play("damage")
 	$DamageSFX.play()
 	health_bar.value = health

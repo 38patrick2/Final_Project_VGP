@@ -86,9 +86,9 @@ func _update_animation(input_dir: int) -> void:
 	if is_dodging:
 		target_anim = "dodge"
 	elif is_attacking:
-		return  
+		target_anim = "attack"  
 	elif is_hurting:
-		return   
+		target_anim = "hit"  
 	elif not is_on_floor():
 		if velocity.y < 0:
 			target_anim = "jump"
@@ -99,7 +99,8 @@ func _update_animation(input_dir: int) -> void:
 			target_anim = "idle"
 		else:
 			target_anim = "run"
-	if anim.animation != target_anim:
+
+	if anim.animation != target_anim or not anim.is_playing():
 		anim.play(target_anim)
 
 func shoot():
