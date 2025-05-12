@@ -58,7 +58,7 @@ func _ready() -> void:
 	
 	print("corners count = %d" % corners.size())
 	for i in range(corners.size()):
-		print("    [%d] = %s" % [i, corners[i]])
+		print("[%d] = %s" % [i, corners[i]])
 
 	if corners.size() == 0:
 		push_error("No corner_marker nodes found")

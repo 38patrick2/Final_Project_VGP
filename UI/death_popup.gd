@@ -2,6 +2,7 @@ extends Control
 
 var restart_scene: String
 
+
 func setup(scene_path: String) -> void:
 	restart_scene = scene_path
 	visible = true

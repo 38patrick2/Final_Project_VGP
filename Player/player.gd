@@ -15,6 +15,7 @@ var is_dead: bool = false
 var is_attacking : bool = false
 @onready var attack_timer = Timer.new()
 @onready var health_bar = $PlayerUI/HealthBar
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D  # CHANGED: cache AnimatedSprite2D for helper
 
 @onready var dodge_timer = Timer.new()
 @onready var dodge_cd_timer = Timer.new()
@@ -79,34 +80,34 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _update_animation(input_dir: int) -> void:
-	if is_dodging:
-		$Dash.play()
-		$AnimatedSprite2D.play("dodge")
-		return
-
-	if is_attacking:
-		return
-	
-	if is_hurting:
-		return
-
 	var anim = $AnimatedSprite2D
-	if not is_on_floor():
+	var target_anim: String = ""
+
+	if is_dodging:
+		target_anim = "dodge"
+	elif is_attacking:
+		return  
+	elif is_hurting:
+		return   
+	elif not is_on_floor():
 		if velocity.y < 0:
-			anim.play("jump")
+			target_anim = "jump"
 		else:
-			anim.play("fall")
-	elif input_dir == 0:
-		anim.play("idle")
+			target_anim = "fall"
 	else:
-		anim.play("run")
+		if input_dir == 0:
+			target_anim = "idle"
+		else:
+			target_anim = "run"
+	if anim.animation != target_anim:
+		anim.play(target_anim)
 
 func shoot():
 	if is_attacking or is_dodging:
 		return
 	is_attacking = true
 	$AttackSFX.play()
-	$AnimatedSprite2D.play("attack")
+	play_anim("attack") 
 	attack_timer.start()
 
 	var bullet = bullet_scene.instantiate()
@@ -137,6 +138,7 @@ func start_roll() -> void:
 func _on_dodge_timer_timeout() -> void:
 	is_dodging = false
 	velocity.x = 0
+	_update_animation(0)
 
 func update_health_bar():
 	health_bar.value = current_health
@@ -146,7 +148,7 @@ func take_damage(amount):
 		return
 
 	is_hurting = true
-	$AnimatedSprite2D.play("hit")
+	play_anim("hit") 
 	$HitSFX.play()
 	current_health -= amount
 	current_health = clamp(current_health, 0, max_health)
@@ -160,7 +162,7 @@ func die():
 		return
 	is_dead = true
 	$Death.play()
-	$AnimatedSprite2D.play("death")
+	play_anim("death")
 	await $AnimatedSprite2D.animation_finished
 
 	var frame_count = $AnimatedSprite2D.sprite_frames.get_frame_count("death")  
@@ -175,6 +177,10 @@ func _on_anim_finished():
 	if $AnimatedSprite2D.animation == "hit":
 		is_hurting = false
 
+func play_anim(anim_name: String) -> void:
+	if sprite.animation != anim_name:
+		sprite.play(anim_name)
+		
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		body.take_damage(25)
