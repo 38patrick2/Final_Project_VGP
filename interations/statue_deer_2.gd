@@ -1,17 +1,29 @@
-extends StaticBody2D
+extends Area2D
 
-@onready var interaction_area: InteractionArea = $InteractionArea
 
-const lines: Array[String] = [
-	"Welcome, brave mage. These lands suffer under the tyranny of the Crystal King.",
-	"Your destiny is to break his reign, and restore the true throne of the kingdom.",
-	"Your journey begins here, to uncover lost secrets and liberate these lands."
-]
+@export var popup_deer_path: NodePath = "../CanvasLayer/Deer_button"
+
+var popup_deer
+var player_in_area: bool = false
+
 
 func _ready():
-	interaction_area.interact = Callable(self, "_on_interact")
+	popup_deer = get_node(popup_deer_path)
+	if not is_connected("body_entered", Callable(self, "on_body_entered")):
+		connect("body_entered", Callable(self, "on_body_entered"))
+		connect("body_exited", Callable(self, "on_body_exited"))
+
+func _process(delta):
+	if player_in_area && Input.is_action_just_pressed("ui_interact"):
+		popup_deer.show()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		popup_deer.show()
+		player_in_area = true
 	
 
-func _on_interact():
-	DialogueManager.start_dialog(global_position, lines)
-	await DialogueManager.dialog_finished
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		popup_deer.hide()
+		player_in_area = false

@@ -1,8 +1,8 @@
-[gd_scene load_steps=56 format=3 uid="uid://b53kuwpw1yvn3"]
+[gd_scene load_steps=57 format=3 uid="uid://b53kuwpw1yvn3"]
 
-[ext_resource type="Script" uid="uid://dd3v87s57jtpc" path="res://World/map.gd" id="1_mc6uo"]
-[ext_resource type="Texture2D" uid="uid://dwo81rti3jmpc" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
-[ext_resource type="Texture2D" uid="uid://bs78iub0oi8jd" path="res://Assets/Env/survivalgame-terrian-defult.png" id="2_n4ymy"]
+[ext_resource type="Script" path="res://World/map.gd" id="1_mc6uo"]
+[ext_resource type="Texture2D" uid="uid://bspgfrn84jpxq" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
+[ext_resource type="Texture2D" uid="uid://d01oe65t2iluv" path="res://Assets/Env/survivalgame-terrian-defult.png" id="2_n4ymy"]
 [ext_resource type="PackedScene" uid="uid://en6e6stc2iaq" path="res://World/Props/barrel.tscn" id="5_x0c0g"]
 [ext_resource type="PackedScene" uid="uid://bif8qqcnc4uh0" path="res://World/Props/box1.tscn" id="6_t7bsi"]
 [ext_resource type="PackedScene" uid="uid://bkxh7uymjl10w" path="res://World/Props/box_2.tscn" id="7_j5ra6"]
@@ -12,22 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://5fjyeru4oerj" path="res://World/Props/axewood.tscn" id="9_xgus0"]
 [ext_resource type="PackedScene" uid="uid://1i62cdvo4m2o" path="res://World/Props/house_3.tscn" id="10_g8dwv"]
 [ext_resource type="PackedScene" uid="uid://gbwmfdnwvapn" path="res://World/Props/house_4.tscn" id="12_txuv6"]
-[ext_resource type="Texture2D" uid="uid://hg0bkeqpnkbh" path="res://Assets/Env/survivalgame-terrian-water copy.png" id="13_5c4ir"]
+[ext_resource type="Texture2D" uid="uid://dddvpor38koci" path="res://Assets/Env/survivalgame-terrian-water copy.png" id="13_5c4ir"]
 [ext_resource type="PackedScene" uid="uid://74rec0suacse" path="res://World/Props/anvil.tscn" id="13_njv00"]
 [ext_resource type="PackedScene" uid="uid://dkvl1k0pc1ilk" path="res://World/player/player_map.tscn" id="14_dut3a"]
 [ext_resource type="PackedScene" uid="uid://dujxi371ta58m" path="res://World/Props/woodpile_1.tscn" id="14_g4xt3"]
-[ext_resource type="Texture2D" uid="uid://d2wd6vxnhnx2g" path="res://Assets/Env/survivalgame-trees copy.png" id="14_h2vex"]
+[ext_resource type="Texture2D" uid="uid://diki6r0navl4l" path="res://Assets/Env/survivalgame-trees copy.png" id="14_h2vex"]
 [ext_resource type="PackedScene" uid="uid://blhm3xyboecnw" path="res://World/Props/woodpile_2.tscn" id="15_ntajb"]
 [ext_resource type="PackedScene" uid="uid://6bw4cvgjd8a1" path="res://World/Props/well.tscn" id="16_xoadv"]
 [ext_resource type="PackedScene" uid="uid://dqroe0p4a8obf" path="res://World/Props/cart.tscn" id="17_0r3y5"]
-[ext_resource type="PackedScene" uid="uid://du1ijxung05bv" path="res://interations/statue_deer.tscn" id="18_8exwa"]
 [ext_resource type="PackedScene" uid="uid://oq0kbhbyj4g7" path="res://interations/statue_old_man.tscn" id="19_6sil8"]
 [ext_resource type="PackedScene" uid="uid://ds510hya653yh" path="res://interations/statue_mother.tscn" id="20_juj27"]
 [ext_resource type="PackedScene" uid="uid://cvdh7wc54w0ud" path="res://interations/statue_fox.tscn" id="21_btbah"]
 [ext_resource type="PackedScene" uid="uid://dadapnltst8q3" path="res://interations/statue_head.tscn" id="22_6k5hr"]
-[ext_resource type="Texture2D" uid="uid://cf5eqoyhkpv11" path="res://Assets/Objects_separately/Dragon_bones_body_grass_shadow.png" id="23_fcwpp"]
-[ext_resource type="Texture2D" uid="uid://sm2yii3nqc8t" path="res://Assets/Objects_separately/Dragon_bones_tail_grass_shadow.png" id="24_eyf2y"]
-[ext_resource type="Texture2D" uid="uid://bjrqxvvoat6b" path="res://Assets/Objects_separately/Dragon_bones_wing2_grass_shadow.png" id="25_hyyis"]
+[ext_resource type="Texture2D" uid="uid://bienc5rgs011h" path="res://Assets/Objects_separately/Dragon_bones_body_grass_shadow.png" id="23_fcwpp"]
+[ext_resource type="Texture2D" uid="uid://dea7x0h73nh7l" path="res://Assets/Objects_separately/Dragon_bones_tail_grass_shadow.png" id="24_eyf2y"]
+[ext_resource type="Texture2D" uid="uid://brahwfdf3gge8" path="res://Assets/Objects_separately/Dragon_bones_wing2_grass_shadow.png" id="25_hyyis"]
 [ext_resource type="PackedScene" uid="uid://bmccrhjnqhm77" path="res://World/Props/palm.tscn" id="26_7t0m7"]
 [ext_resource type="PackedScene" uid="uid://dit8jp6yqj482" path="res://World/Props/palm_2.tscn" id="27_d3h72"]
 [ext_resource type="PackedScene" uid="uid://ptsyau3lbj8y" path="res://World/Props/palm_3.tscn" id="28_kxlp7"]
@@ -43,12 +42,14 @@
 [ext_resource type="PackedScene" uid="uid://uhr4354e1sht" path="res://World/Props/tent_3.tscn" id="38_nn1i0"]
 [ext_resource type="PackedScene" uid="uid://bkwk7ag7ok8bk" path="res://World/Props/tent_2.tscn" id="39_xj8la"]
 [ext_resource type="PackedScene" uid="uid://ct5vthsyimxgn" path="res://World/Props/tent_1.tscn" id="40_kojg7"]
-[ext_resource type="Texture2D" uid="uid://b4lctxv7bw3o0" path="res://Assets/village-pixel-tileset-top-down/2 Objects/3 Decor/17.png" id="41_gdgon"]
-[ext_resource type="Texture2D" uid="uid://y3iad2v5m1b2" path="res://Assets/village-pixel-tileset-top-down/2 Objects/3 Decor/16.png" id="42_gkaqu"]
-[ext_resource type="Script" uid="uid://d0tmrkvquc440" path="res://World/boss_lair_entrance1.gd" id="44_tw4yq"]
-[ext_resource type="Script" uid="uid://bh73mi2ea870b" path="res://World/boss_lair_entrance2.gd" id="45_mc6uo"]
-[ext_resource type="Script" uid="uid://nuecdp3dadg0" path="res://World/boss_lair_entrance3.gd" id="48_kg6h4"]
-[ext_resource type="AudioStream" uid="uid://lwr0j7f6ggen" path="res://Assets/popcorn-and-videogames-233568.mp3" id="49_5lse3"]
+[ext_resource type="Texture2D" uid="uid://baeoh04rld1ou" path="res://Assets/village-pixel-tileset-top-down/2 Objects/3 Decor/17.png" id="41_gdgon"]
+[ext_resource type="Texture2D" uid="uid://td6ktlnkg1tg" path="res://Assets/village-pixel-tileset-top-down/2 Objects/3 Decor/16.png" id="42_gkaqu"]
+[ext_resource type="Script" path="res://World/boss_lair_entrance1.gd" id="44_tw4yq"]
+[ext_resource type="Script" path="res://World/boss_lair_entrance2.gd" id="45_mc6uo"]
+[ext_resource type="Script" path="res://World/boss_lair_entrance3.gd" id="48_kg6h4"]
+[ext_resource type="AudioStream" uid="uid://cpjr2hbnnv6t2" path="res://Assets/popcorn-and-videogames-233568.mp3" id="49_5lse3"]
+[ext_resource type="PackedScene" uid="uid://ddoi6ewyok2s6" path="res://interations/statue_deer 2.tscn" id="49_gdht4"]
+[ext_resource type="PackedScene" uid="uid://cyfvx7q820cpg" path="res://UI/deer_button.tscn" id="51_ku3rj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00kyn"]
 texture = ExtResource("1_vi3qm")
@@ -431,7 +432,7 @@ position = Vector2(1587, -18)
 position = Vector2(1440, 127)
 
 [node name="axewood5" parent="Props" instance=ExtResource("9_xgus0")]
-position = Vector2(1697, -204)
+position = Vector2(1622, -209)
 
 [node name="woodpile1" parent="Props" instance=ExtResource("14_g4xt3")]
 position = Vector2(272, -52)
@@ -490,9 +491,6 @@ position = Vector2(738, -68)
 [node name="cart4" parent="Props" instance=ExtResource("17_0r3y5")]
 position = Vector2(1316, 98)
 
-[node name="statue_deer" parent="Props" instance=ExtResource("18_8exwa")]
-position = Vector2(-485, 210)
-
 [node name="statue_old_man" parent="Props" instance=ExtResource("19_6sil8")]
 position = Vector2(2074, -286)
 
@@ -500,10 +498,10 @@ position = Vector2(2074, -286)
 position = Vector2(159, 213)
 
 [node name="statue_fox" parent="Props" instance=ExtResource("21_btbah")]
-position = Vector2(-129, 239)
+position = Vector2(1650, 6)
 
 [node name="statue_head4" parent="Props" instance=ExtResource("22_6k5hr")]
-position = Vector2(460, -204)
+position = Vector2(517, -191)
 
 [node name="Sprite2D" type="Sprite2D" parent="Props"]
 position = Vector2(2307, -98)
@@ -692,7 +690,7 @@ limit_right = 2518
 limit_bottom = 469
 
 [node name="Boss_Lair_Entrance3" parent="." instance=ExtResource("9_54knd")]
-position = Vector2(1149, -1)
+position = Vector2(1695, -241)
 script = ExtResource("48_kg6h4")
 
 [node name="MapSong" type="AudioStreamPlayer2D" parent="."]
@@ -700,7 +698,21 @@ stream = ExtResource("49_5lse3")
 volume_db = -10.0
 parameters/looping = false
 
+[node name="statue_deer" parent="." instance=ExtResource("49_gdht4")]
+position = Vector2(-471, 203)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Deer_button" parent="CanvasLayer" instance=ExtResource("51_ku3rj")]
+visible = false
+offset_left = -15.0
+offset_top = -32.0
+offset_right = 25.0
+offset_bottom = 8.0
+
 [connection signal="body_entered" from="Boss_Lair_Entrance2" to="Boss_Lair_Entrance2" method="_on_body_entered"]
 [connection signal="body_exited" from="Boss_Lair_Entrance2" to="Boss_Lair_Entrance2" method="_on_body_exited"]
 [connection signal="body_entered" from="Boss_Lair_Entrance" to="Boss_Lair_Entrance" method="_on_body_entered"]
 [connection signal="body_exited" from="Boss_Lair_Entrance" to="Boss_Lair_Entrance" method="_on_body_exited"]
+[connection signal="body_entered" from="statue_deer" to="statue_deer" method="_on_body_entered"]
+[connection signal="body_exited" from="statue_deer" to="statue_deer" method="_on_body_exited"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyfvx7q820cpg"]
+
+[ext_resource type="Script" path="res://UI/deer_button.gd" id="1_805ka"]
+[ext_resource type="Texture2D" uid="uid://dldacek7jo6fx" path="res://Assets/popup_dialog/Deer_text.png" id="1_lmbgs"]
+[ext_resource type="Texture2D" uid="uid://ck68vsowv6qyh" path="res://Assets/start-screen/endframe (2).png" id="2_musas"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mt2r"]
+texture = ExtResource("2_musas")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fku7u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8h6cn"]
+texture = ExtResource("1_lmbgs")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mqjt1"]
+texture = ExtResource("1_lmbgs")
+
+[node name="Deer_button" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_805ka")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -593.0
+offset_top = -369.0
+offset_right = 639.0
+offset_bottom = 412.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8mt2r")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -411.0
+offset_top = -214.0
+offset_right = 492.0
+offset_bottom = 280.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fku7u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8h6cn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mqjt1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mqjt1")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

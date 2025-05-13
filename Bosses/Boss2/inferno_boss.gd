@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var health_bar: ProgressBar = get_tree().current_scene.get_node("CanvasLayer/BossHealthBarUI")
 @onready var death_popup = $"../CanvasLayer/DeathPopup"
-@onready var end_popup: Control = get_tree().get_current_scene().get_node("CanvasLayer/end_screen")
+@onready var victory_popup: Control = get_tree().get_current_scene().get_node("CanvasLayer/VictoryPopup")
 @onready var movement_timer: Timer = $movement_timer
 @onready var attack_timer: Timer = $AttackTimer
 @export var bullet_scene: PackedScene = preload("res://Bosses/Boss2/inferno_bullet.tscn")
@@ -26,7 +26,7 @@ var lair_center: Vector2
 var direction: Vector2 = Vector2.ZERO
 var is_moving: bool = false
 
-var health: int  = 10
+var health: int  = 100
 var can_take_damage: bool = true
 var is_dead: bool = false
 
@@ -122,7 +122,7 @@ func _on_movement_timer_timeout() -> void:
 func take_damage() -> void:
 	if not can_take_damage or is_dead:
 		return
-	health -= 10
+	health -= 7
 	sprite.play("hit")
 	$DamageSFX.play()
 	health_bar.value = health
@@ -150,10 +150,11 @@ func die() -> void:
 	var last = sprite.sprite_frames.get_frame_count("death") - 1
 	sprite.stop()
 	sprite.frame = last
-	$BossMusic.stop()
-	$EndMusic.play()
+	
+
 	var scene_path = get_tree().current_scene.scene_file_path  
-	end_popup.show()
+	victory_popup.setup(scene_path)
+
 	hide()
 
 func _on_attack_timer_timeout() -> void:

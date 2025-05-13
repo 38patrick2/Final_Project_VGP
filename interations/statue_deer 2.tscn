@@ -11,7 +11,7 @@ height = 50.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvi8q"]
 radius = 65.7647
 
-[node name="statue_deer" type="StaticBody2D"]
+[node name="statue_deer" type="Area2D"]
 script = ExtResource("1_ocrkh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,6 +24,6 @@ shape = SubResource("CapsuleShape2D_bm3o1")
 [node name="InteractionArea" parent="." instance=ExtResource("2_3r8t3")]
 action_name = "talk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-1, 50)
 shape = SubResource("CircleShape2D_bvi8q")
