@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var health_bar: ProgressBar = get_tree().current_scene.get_node("CanvasLayer/BossHealthBarUI")
 @onready var death_popup = $"../CanvasLayer/DeathPopup"
-@onready var victory_popup: Control = get_tree().get_current_scene().get_node("CanvasLayer/VictoryPopup")
+@onready var end_popup: Control = get_tree().get_current_scene().get_node("CanvasLayer/end_screen")
 @onready var movement_timer: Timer = $movement_timer
 @onready var attack_timer: Timer = $AttackTimer
 @export var bullet_scene: PackedScene = preload("res://Bosses/Boss2/inferno_bullet.tscn")
@@ -153,7 +153,7 @@ func die() -> void:
 	
 
 	var scene_path = get_tree().current_scene.scene_file_path  
-	victory_popup.setup(scene_path)
+	end_popup.show()
 
 	hide()
 
