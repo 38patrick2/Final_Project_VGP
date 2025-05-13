@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dd6bxxgunk05d"]
+[gd_scene load_steps=51 format=3 uid="uid://cv6q8u2sre2u1"]
 
 [ext_resource type="Texture2D" uid="uid://dwo81rti3jmpc" path="res://Assets/Env/survivalgame-terrian-cliffs.png" id="1_vi3qm"]
 [ext_resource type="Texture2D" uid="uid://bs78iub0oi8jd" path="res://Assets/Env/survivalgame-terrian-defult.png" id="2_n4ymy"]
