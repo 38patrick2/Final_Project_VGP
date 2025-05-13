@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var dash_timer: Timer = $dash_timer
 @onready var radial_timer: Timer = $RadialTimer 
 @onready var health_bar: ProgressBar = get_tree().get_current_scene().get_node("CanvasLayer/BossHealthBarUI")
-@onready var death_popup   = $CanvasLayer/DeathPopup
+@onready var death_popup = $CanvasLayer/DeathPopup
 @onready var victory_popup: Control = get_tree().get_current_scene().get_node("CanvasLayer/VictoryPopup")
 
 @onready var player = get_parent().get_parent().get_node("Player")
