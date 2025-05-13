@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dadapnltst8q3"]
+[gd_scene load_steps=6 format=3 uid="uid://dadapnltst8q3"]
 
 [ext_resource type="Texture2D" uid="uid://de04cr833ippa" path="res://Assets/Objects_separately/Rock_statue_head_grass_shadow.png" id="1_aj0ds"]
+[ext_resource type="Script" path="res://interations/statue_head.gd" id="1_bfwbr"]
 [ext_resource type="PackedScene" uid="uid://s7r0esrireo2" path="res://interations/interation_area/interaction_area.tscn" id="2_pmn8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvbn1"]
@@ -9,8 +10,9 @@ radius = 11.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_nllba"]
 radius = 39.0128
 
-[node name="statue_head" type="StaticBody2D"]
+[node name="statue_head" type="Area2D"]
 y_sort_enabled = true
+script = ExtResource("1_bfwbr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aj0ds")
@@ -24,3 +26,6 @@ shape = SubResource("CapsuleShape2D_lvbn1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 19)
 shape = SubResource("CircleShape2D_nllba")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

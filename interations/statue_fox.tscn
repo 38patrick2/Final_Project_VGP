@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvdh7wc54w0ud"]
+[gd_scene load_steps=6 format=3 uid="uid://cvdh7wc54w0ud"]
 
+[ext_resource type="Script" path="res://interations/statue_fox.gd" id="1_4ihku"]
 [ext_resource type="Texture2D" uid="uid://cikop0s8nmjyw" path="res://Assets/Objects_separately/Rock_statue_fox_grass_shadow.png" id="1_hdbxo"]
 [ext_resource type="PackedScene" uid="uid://s7r0esrireo2" path="res://interations/interation_area/interaction_area.tscn" id="2_2l737"]
 
@@ -10,8 +11,9 @@ height = 32.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6she"]
 radius = 41.0122
 
-[node name="statue_fox" type="StaticBody2D"]
+[node name="statue_fox" type="Area2D"]
 y_sort_enabled = true
+script = ExtResource("1_4ihku")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_hdbxo")
@@ -25,3 +27,6 @@ shape = SubResource("CapsuleShape2D_q0txn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 22)
 shape = SubResource("CircleShape2D_q6she")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

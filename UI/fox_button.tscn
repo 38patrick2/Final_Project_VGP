@@ -1,17 +1,55 @@
-[gd_scene format=3 uid="uid://brd6mlmpdkuvh"]
+[gd_scene load_steps=9 format=3 uid="uid://brd6mlmpdkuvh"]
+
+[ext_resource type="Script" path="res://UI/fox_button.gd" id="1_bgmae"]
+[ext_resource type="Texture2D" uid="uid://ck68vsowv6qyh" path="res://Assets/start-screen/endframe (2).png" id="1_i3pa2"]
+[ext_resource type="Texture2D" uid="uid://bpfctpafg7u1w" path="res://Assets/popup_dialog/Fox_text.png" id="3_x4gfr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hy0e5"]
+texture = ExtResource("1_i3pa2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfljt"]
+texture = ExtResource("3_x4gfr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fluyj"]
+texture = ExtResource("3_x4gfr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x64hn"]
+texture = ExtResource("3_x4gfr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia1ox"]
+texture = ExtResource("3_x4gfr")
 
 [node name="fox_button" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bgmae")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -593.0
+offset_top = -369.0
+offset_right = 639.0
+offset_bottom = 412.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_hy0e5")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -410.0
+offset_top = -247.0
+offset_right = 444.0
+offset_bottom = 296.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_lfljt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fluyj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x64hn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ia1ox")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

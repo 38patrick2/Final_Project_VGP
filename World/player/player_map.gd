@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 130
+@export var speed := 150
 var direction := Vector2.ZERO
 
 @onready var sprite := $AnimatedSprite2D

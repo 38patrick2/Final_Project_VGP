@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://brbxlxtmj2i7j"]
+
+[ext_resource type="Script" path="res://UI/elder_button.gd" id="1_juk8s"]
+[ext_resource type="Texture2D" uid="uid://ck68vsowv6qyh" path="res://Assets/start-screen/endframe (2).png" id="1_sm1ya"]
+[ext_resource type="Texture2D" uid="uid://cab6yc2jkxrx0" path="res://Assets/popup_dialog/Elder_text.png" id="3_4xqnn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxytr"]
+texture = ExtResource("1_sm1ya")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c837b"]
+texture = ExtResource("3_4xqnn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mrsrc"]
+texture = ExtResource("3_4xqnn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d48kf"]
+texture = ExtResource("3_4xqnn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dcitn"]
+texture = ExtResource("3_4xqnn")
+
+[node name="elder_button" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_juk8s")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -593.0
+offset_top = -369.0
+offset_right = 639.0
+offset_bottom = 412.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dxytr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -426.0
+offset_top = -217.0
+offset_right = 471.0
+offset_bottom = 262.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_c837b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mrsrc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d48kf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dcitn")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

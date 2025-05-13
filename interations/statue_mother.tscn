@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds510hya653yh"]
+[gd_scene load_steps=7 format=3 uid="uid://ds510hya653yh"]
 
 [ext_resource type="Texture2D" uid="uid://c8xn8qf0y34ck" path="res://Assets/Objects_separately/Rock_statue_mother_grass_shadow.png" id="1_7usmw"]
+[ext_resource type="Script" path="res://interations/statue_mother.gd" id="1_ov02m"]
 [ext_resource type="PackedScene" uid="uid://s7r0esrireo2" path="res://interations/interation_area/interaction_area.tscn" id="2_eh48h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2evr"]
@@ -14,8 +15,9 @@ height = 69.9285
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h17b"]
 radius = 66.0076
 
-[node name="statue_mother" type="StaticBody2D"]
+[node name="statue_mother" type="Area2D"]
 y_sort_enabled = true
+script = ExtResource("1_ov02m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7usmw")
@@ -27,6 +29,7 @@ shape = SubResource("CapsuleShape2D_e2evr")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 39)
 rotation = -1.5865
+scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_bjopx")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_eh48h")]
@@ -34,3 +37,6 @@ shape = SubResource("CapsuleShape2D_bjopx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-2, 53)
 shape = SubResource("CircleShape2D_7h17b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
